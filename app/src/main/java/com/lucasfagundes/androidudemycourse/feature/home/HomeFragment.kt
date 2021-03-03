@@ -1,4 +1,4 @@
-package com.lucasfagundes.androidudemycourse.ui.home
+package com.lucasfagundes.androidudemycourse.feature.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
