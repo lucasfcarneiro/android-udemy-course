@@ -7,11 +7,15 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home"
-            android:title="@string/home_text" />
+            android:title="@string/home" />
+        <item
+            android:id="@+id/nav_rock_paper_scissors"
+            android:icon="@drawable/ic_random_number"
+            android:title="@string/rock_paper_scissors" />
         <item
             android:id="@+id/nav_random_number"
             android:icon="@drawable/ic_random_number"
-            android:title="@string/menu_random_number" />
+            android:title="@string/random_number" />
 
     </group>
 </menu>
