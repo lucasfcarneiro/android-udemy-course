@@ -1,14 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".feature.rock_paper_scissors.RockPaperScissorsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/choice_app"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appChoiceImageView"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ChooseOptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/choose_option"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appChoiceImageView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/rockHandImageView"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:src="@drawable/rock_hand"
+        app:layout_constraintEnd_toStartOf="@id/paperHandImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/paperHandImageView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/paperHandImageView"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="54dp"
+        android:src="@drawable/paper_hand"
+        app:layout_constraintEnd_toStartOf="@id/scissorHandImageView"
+        app:layout_constraintStart_toEndOf="@id/rockHandImageView"
+        app:layout_constraintTop_toBottomOf="@id/ChooseOptionTextView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/scissorHandImageView"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:src="@drawable/scissors_hand"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/paperHandImageView"
+        app:layout_constraintTop_toTopOf="@id/paperHandImageView"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/resultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rockHandImageView"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

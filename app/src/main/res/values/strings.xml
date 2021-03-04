@@ -4,8 +4,8 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Lucas Fagundes</string>
+    <string name="nav_header_subtitle">lukasfcarneiro@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
@@ -19,7 +19,11 @@
     <string name="no_number_chosen">Nenhum numero escolhido </string>
 
     <string name="rock_paper_scissors">Pedra Papel Tesoura</string>
-
+    <string name="you_win">Voce Ganhou! </string>
+    <string name="you_lose">Voce Perdeu! Loser</string>
+    <string name="you_draw">Vish, Empatou!</string>
+    <string name="choice_app">Escolha do App</string>
+    <string name="choose_option">Escolha uma Opcao</string>
 
 
 </resources>
