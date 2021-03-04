@@ -10,9 +10,12 @@
     <string name="menu_random_number">Random Number</string>
     <string name="button_play">Jogar</string>
     <string name="click_below">Clique abaixo</string>
-    <string name ="choose_number">Escolha um numero de 0 a 20</string>
-    <string name ="number_answer">Numero escolhido: %1$s</string>
-    <string name ="no_number_chosen">Nenhum numero escolhido </string>
+    <string name="choose_number">Escolha um numero de 0 a 20</string>
+    <string name="number_answer">Numero escolhido: %1$s</string>
+    <string name="no_number_chosen">Nenhum numero escolhido </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_text">Home</string>
 
 </resources>
 
