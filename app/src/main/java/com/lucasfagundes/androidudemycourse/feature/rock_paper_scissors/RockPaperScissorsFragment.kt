@@ -12,16 +12,22 @@ import com.lucasfagundes.androidudemycourse.feature.rock_paper_scissors.ChoiceOp
 import com.lucasfagundes.androidudemycourse.feature.rock_paper_scissors.ChoiceOptions.SCISSORS
 import com.lucasfagundes.androidudemycourse.feature.rock_paper_scissors.ChoiceOptions.ROCK
 
-
 class RockPaperScissorsFragment : Fragment() {
 
     private lateinit var binding: FragmentRockPaperScissorsBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_rock_paper_scissors, container, false)
+    ):
+            View? {
+        binding = FragmentRockPaperScissorsBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         setUserChoice()
     }
 
