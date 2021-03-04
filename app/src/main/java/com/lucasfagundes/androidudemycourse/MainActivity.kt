@@ -27,7 +27,13 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_home,
+<<<<<<< Updated upstream
                 R.id.nav_random_number
+=======
+                R.id.nav_rock_paper_scissors,
+                R.id.nav_random_number,
+                R.id.nav_alcohol_gasoline
+>>>>>>> Stashed changes
             ), binding.drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
