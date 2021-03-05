@@ -16,18 +16,11 @@
         android:name="com.lucasfagundes.androidudemycourse.feature.home.HomeFragment"
         android:label="@string/home_text"
         tools:layout="@layout/fragment_home" />
-<<<<<<< Updated upstream
-=======
+
     <fragment
-        android:id="@+id/nav_rock_paper_scissors"
-        android:name="com.lucasfagundes.androidudemycourse.feature.rock_paper_scissors.RockPaperScissorsFragment"
-        android:label="fragment_rock_paper_scissors"
-        tools:layout="@layout/fragment_rock_paper_scissors" />
-    <fragment
-        android:id="@+id/alcoholGasolineFragment"
+        android:id="@+id/nav_alcohol_gasoline"
         android:name="com.lucasfagundes.androidudemycourse.feature.alcohol_gasoline.AlcoholGasolineFragment"
         android:label="fragment_alcohol_gasoline"
         tools:layout="@layout/fragment_alcohol_gasoline" />
->>>>>>> Stashed changes
 
 </navigation>

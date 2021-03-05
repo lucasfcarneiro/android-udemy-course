@@ -11,11 +11,6 @@ import com.lucasfagundes.androidudemycourse.databinding.FragmentAlcoholGasolineB
 class AlcoholGasolineFragment : Fragment() {
 
     private lateinit var binding: FragmentAlcoholGasolineBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding.calcButton.setOnClickListener { getPrices() }
-        binding.cleaTextView.setOnClickListener { cleanFields() }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,6 +21,11 @@ class AlcoholGasolineFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.calcButton.setOnClickListener { getPrices() }
+        binding.cleaTextView.setOnClickListener { cleanFields() }
+    }
     private fun getPrices() {
         val alcoholPrice = binding.alcoholInputText.text.toString().toDouble()
         val gasolinePrice = binding.gasolineInputText.text.toString().toDouble()
