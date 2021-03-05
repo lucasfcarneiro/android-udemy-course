@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_home,
+                R.id.nav_alcohol_gasoline,
                 R.id.nav_rock_paper_scissors,
                 R.id.nav_random_number
             ), binding.drawerLayout

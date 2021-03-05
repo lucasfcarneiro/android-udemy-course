@@ -22,4 +22,10 @@
         android:label="fragment_rock_paper_scissors"
         tools:layout="@layout/fragment_rock_paper_scissors" />
 
+    <fragment
+        android:id="@+id/nav_alcohol_gasoline"
+        android:name="com.lucasfagundes.androidudemycourse.feature.alcohol_gasoline.AlcoholGasolineFragment"
+        android:label="fragment_alcohol_gasoline"
+        tools:layout="@layout/fragment_alcohol_gasoline" />
+
 </navigation>
