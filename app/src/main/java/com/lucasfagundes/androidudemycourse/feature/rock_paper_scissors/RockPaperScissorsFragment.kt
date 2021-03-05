@@ -20,8 +20,7 @@ class RockPaperScissorsFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ):
-            View? {
+    ): View? {
         binding = FragmentRockPaperScissorsBinding.inflate(inflater, container, false)
         return binding.root
     }

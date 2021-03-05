@@ -19,13 +19,13 @@
     <fragment
         android:id="@+id/nav_rock_paper_scissors"
         android:name="com.lucasfagundes.androidudemycourse.feature.rock_paper_scissors.RockPaperScissorsFragment"
-        android:label="fragment_rock_paper_scissors"
+        android:label="@string/rock_paper_scissors"
         tools:layout="@layout/fragment_rock_paper_scissors" />
 
     <fragment
         android:id="@+id/nav_alcohol_gasoline"
         android:name="com.lucasfagundes.androidudemycourse.feature.alcohol_gasoline.AlcoholGasolineFragment"
-        android:label="fragment_alcohol_gasoline"
+        android:label="@string/alcohol_gasoline"
         tools:layout="@layout/fragment_alcohol_gasoline" />
 
 </navigation>
