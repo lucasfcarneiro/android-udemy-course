@@ -38,5 +38,15 @@
     <string name="relation_price_info">%1$s é o preço do alcool em relação a gasolina</string>
     <string name="empty_field">Campo vazio</string>
 
+    <string name="tip_calculator">Calcular Gorjeta</string>
+    <string name="percentage_100">100%</string>
+    <string name="percentage_0">0%</string>
+    <string name="tip">Gorjeta</string>
+    <string name="total">Total</string>
+    <string name="hint_bill_price">Digite o valor da conta Ex: 36.50</string>
+    <string name="value_text">R$0,00</string>
+    <string name="R$">R$ %1$s</string>
+    <string name="percent">%1$s gg</string>
+
 </resources>
 
