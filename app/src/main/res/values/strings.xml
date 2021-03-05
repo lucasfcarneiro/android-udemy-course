@@ -33,10 +33,23 @@
     <string name="alcohol_name">Preço Alcool ex: 2,90</string>
     <string name="better_alcohol">Melhor alcool</string>
     <string name="better_gasoline">Melhor gasolina</string>
-    <string name="clean_button">limpar</string>
-    <string name="calculate">calcular</string>
+    <string name="clean">Limpar</string>
+    <string name="calculate">Calcular</string>
     <string name="relation_price_info">%1$s é o preço do alcool em relação a gasolina</string>
     <string name="empty_field">Campo vazio</string>
+
+    <string name="beer_values">Valores de Cervejas</string>
+    <string name="firstUnitPriceTextInput">Preço Unitario</string>
+    <string name="secondUnitPriceTextInput">Preço Unitario</string>
+    <string name="radio_button_250">250 ML</string>
+    <string name="radio_button_350">350 ML</string>
+    <string name="radio_button_473">473 ML</string>
+    <string name="radio_button_600">600 ML</string>
+    <string name="equal_prices">Os preços são iguais</string>
+    <string name="better_first_option">Melhor comprar a primeira opção: %1$s ML</string>
+    <string name="better_second_option">Melhor comprar a segunda opção: %1$s ML</string>
+    <string name="liter_price">O preço do litro é: %1$s reais</string>
+    <string name="diferent_ML">ou digite uma quantidade de ML diferente abaixo</string>
 
 </resources>
 
