@@ -71,8 +71,8 @@ class TipCalculatorFragment : Fragment() {
             val tip = billValue.toDouble() * (percentage / 100)
             val total = billValue.toDouble() + tip
 
-            binding.textViewTipValue.text = getString(R.string.`R$`, tip.toString())
-            binding.textViewTotalValue.text = getString(R.string.`R$`, total.toString())
+            binding.textViewTipValue.text = getString(R.string.money, tip.toString())
+            binding.textViewTotalValue.text = getString(R.string.money, total.toString())
         }
     }
 }
