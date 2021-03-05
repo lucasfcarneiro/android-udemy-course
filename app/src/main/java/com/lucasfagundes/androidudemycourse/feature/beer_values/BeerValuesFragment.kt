@@ -20,7 +20,7 @@ class BeerValuesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentBeerValuesBinding.inflate(inflater,container,false)
+        binding = FragmentBeerValuesBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -28,34 +28,64 @@ class BeerValuesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.calcButton.setOnClickListener {
-            setResultsAtScreen()
+            val firstRadioButtonValue = checkRadioButtonSelection(binding.firstRadioGroup)
+            val secondRadioButtonValue = checkRadioButtonSelection(binding.secondRadioGroup)
+
+            if (firstRadioButtonValue == 0.0 && secondRadioButtonValue == 0.0) {
+                val x = binding.firstMLEditText.text.toString()
+                val y = binding.secondMLEditText.text.toString()
+                val resultado1 = calculatePrice(x.toDouble(), binding.firstPriceEditText)
+                val resultado2 = calculatePrice(y.toDouble(), binding.firstPriceEditText)
+
+                when {
+                    resultado1 > resultado2 -> {
+                        binding.resultFinalTextView.text = getString(
+                            R.string.better_second_option,
+                            secondRadioButtonValue.toString()
+                        )
+                    }
+                    resultado1 == resultado2 -> {
+                        binding.resultFinalTextView.text = getString(R.string.equal_prices)
+                    }
+                    else -> binding.resultFinalTextView.text =
+                        getString(R.string.better_first_option, firstRadioButtonValue.toString())
+                }
+
+                binding.resultFirstTextView.text =
+                    getString(R.string.liter_price, resultado1.toString().format("%.2f"))
+                binding.resultSecondTextView.text =
+                    getString(R.string.liter_price, resultado2.toString().format("%.2f"))
+
+            } else {
+                val firstLiterPrice =
+                    calculatePrice(firstRadioButtonValue, binding.firstPriceEditText)
+                val secondLiterPrice =
+                    calculatePrice(secondRadioButtonValue, binding.secondPriceEditText)
+
+                when {
+                    firstLiterPrice > secondLiterPrice -> {
+                        binding.resultFinalTextView.text = getString(
+                            R.string.better_second_option,
+                            secondRadioButtonValue.toString()
+                        )
+                    }
+                    firstLiterPrice == secondLiterPrice -> {
+                        binding.resultFinalTextView.text = getString(R.string.equal_prices)
+                    }
+                    else -> binding.resultFinalTextView.text =
+                        getString(R.string.better_first_option, firstRadioButtonValue.toString())
+                }
+
+                binding.resultFirstTextView.text =
+                    getString(R.string.liter_price, firstLiterPrice.toString().format("%.2f"))
+                binding.resultSecondTextView.text =
+                    getString(R.string.liter_price, secondLiterPrice.toString().format("%.2f"))
+
+            }
             hideKeyboard()
         }
-
         binding.cleanButton.setOnClickListener { cleanFields() }
-    }
-
-    private fun setResultsAtScreen(){
-        val firstRadioButtonValue = checkRadioButtonSelection(binding.firstRadioGroup)
-        val secondRadioButtonValue = checkRadioButtonSelection(binding.secondRadioGroup)
-
-        val firstLiterPrice = calculatePrice(firstRadioButtonValue,binding.firstPriceEditText)
-        val secondLiterPrice = calculatePrice(secondRadioButtonValue,binding.secondPriceEditText)
-
-        binding.resultFirstTextView.text = getString(R.string.liter_price, firstLiterPrice.toString().format("%.2f"))
-        binding.resultSecondTextView.text =  getString(R.string.liter_price, secondLiterPrice.toString().format("%.2f"))
-        //"O preço do litro é: ${String.format("%.2f", secondLiterPrice)} reais"
-        when {
-            firstLiterPrice > secondLiterPrice -> {
-                binding.resultFinalTextView.text =  getString(R.string.better_second_option, secondRadioButtonValue.toString())
-                //"Melhor comprar a segunda opção: ${secondRadioButtonValue.toInt()} ML"
-            }
-            firstLiterPrice == secondLiterPrice -> {
-                binding.resultFinalTextView.text = getString(R.string.equal_prices)
-            }
-            else -> binding.resultFinalTextView.text = getString(R.string.better_first_option,firstRadioButtonValue.toString())
-        }
-    }
+    }//funçoes
 
     private fun calculatePrice(canValue: Double, unitPrice: TextInputEditText): Double {
         val numberOfCans = 1000 / canValue
@@ -82,7 +112,8 @@ class BeerValuesFragment : Fragment() {
             }
         }
     }
-    private fun cleanFields (){
+
+    private fun cleanFields() {
         binding.firstPriceEditText.setText("")
         binding.secondPriceEditText.setText("")
         binding.resultFirstTextView.text = ""
@@ -92,3 +123,7 @@ class BeerValuesFragment : Fragment() {
         binding.firstRadioGroup.clearCheck()
     }
 }
+
+
+//"O preço do litro é: ${String.format("%.2f", secondLiterPrice)} reais"
+//"Melhor comprar a segunda opção: ${secondRadioButtonValue.toInt()} ML"
