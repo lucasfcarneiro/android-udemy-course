@@ -27,6 +27,7 @@
     <string name="clean_button">limpar</string>
     <string name="calculate">calcular</string>
     <string name="relation_price_info">%1$s é o preço do alcool em relação a gasolina</string>
+    <string name="empty_field">Campo vazio</string>
 
 </resources>
 

@@ -1,12 +1,15 @@
 package com.lucasfagundes.androidudemycourse.feature.alcohol_gasoline
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.FragmentAlcoholGasolineBinding
+import com.lucasfagundes.androidudemycourse.utils.hideKeyboard
 
 class AlcoholGasolineFragment : Fragment() {
 
@@ -23,17 +26,21 @@ class AlcoholGasolineFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.calcButton.setOnClickListener { getPrices() }
+        binding.calcButton.setOnClickListener {
+            getPrices()
+            hideKeyboard()
+        }
         binding.cleaTextView.setOnClickListener { cleanFields() }
     }
+
     private fun getPrices() {
-        val alcoholPrice = binding.alcoholInputText.text.toString().toDouble()
-        val gasolinePrice = binding.gasolineInputText.text.toString().toDouble()
+        val alcoholPrice = binding.alcoholInputText.text.toString()
+        val gasolinePrice = binding.gasolineInputText.text.toString()
 
         val fieldValidated = validateFields(alcoholPrice, gasolinePrice)
 
         if (fieldValidated) {
-            val division = alcoholPrice / gasolinePrice
+            val division = alcoholPrice.toDouble() / gasolinePrice.toDouble()
             if (division <= 0.7) {
                 binding.resultTextView.text = getString(R.string.better_alcohol)
             } else {
@@ -41,16 +48,17 @@ class AlcoholGasolineFragment : Fragment() {
             }
             binding.percentTextView.text =
                 getString(R.string.relation_price_info, division.toString())
-            //"$division é o preço do alcool em relação a gasolina"
+        } else {
+            binding.resultTextView.text = getString(R.string.empty_field)
         }
     }
 
-    private fun validateFields(x: Double, y: Double): Boolean {
+    private fun validateFields(alcoholInputText: String, gasolineInputText: String): Boolean {
         var isValid = true
 
-        if (x.equals("")) {
+        if (alcoholInputText.isBlank()) {
             isValid = false
-        } else if (y.equals("")) {
+        } else if (gasolineInputText.isBlank()) {
             isValid = false
         }
         return isValid
@@ -58,9 +66,8 @@ class AlcoholGasolineFragment : Fragment() {
 
     private fun cleanFields() {
         binding.alcoholInputText.setText("")
-        binding.alcoholInputText.setText("")
+        binding.gasolineInputText.setText("")
         binding.resultTextView.text = ""
         binding.percentTextView.text = ""
     }
-
 }
