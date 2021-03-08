@@ -12,11 +12,10 @@ import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.FragmentTipCalculatorBinding
 import kotlin.math.roundToInt
 
-private lateinit var billValue: String
-private var percentage = 0.0
-
 class TipCalculatorFragment : Fragment() {
 
+    private lateinit var billValue: String
+    private var percentage = 0.0
     private lateinit var binding: FragmentTipCalculatorBinding
 
     override fun onCreateView(
@@ -37,12 +36,11 @@ class TipCalculatorFragment : Fragment() {
 
         binding.seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
 
-            @SuppressLint("SetTextI18n")
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
 
                 seekBar.let {
                     percentage = progress.toDouble()
-                    binding.textViewPorcentage.text = "${percentage.roundToInt()}%"
+                    binding.textViewPorcentage.text = getString(R.string.percent)  //"${percentage.roundToInt()}%"
                 }
                 billValue = binding.textEditBillValue.text.toString()
                 calculateTip(percentage)
@@ -61,7 +59,7 @@ class TipCalculatorFragment : Fragment() {
         if (billValue.isBlank()) {
 
             val emptyBill =
-                Toast.makeText(context, "Digite o valor da conta", Toast.LENGTH_LONG)
+                Toast.makeText(context, "Digite o valor da conta", Toast.LENGTH_SHORT)
             emptyBill.show()
 
             binding.textViewTipValue.text = getString(R.string.value_text)
@@ -71,8 +69,8 @@ class TipCalculatorFragment : Fragment() {
             val tip = billValue.toDouble() * (percentage / 100)
             val total = billValue.toDouble() + tip
 
-            binding.textViewTipValue.text = getString(R.string.money, tip.toString())
-            binding.textViewTotalValue.text = getString(R.string.money, total.toString())
+            binding.textViewTipValue.text = getString(R.string.money, String.format("%.2f", tip))
+            binding.textViewTotalValue.text = getString(R.string.money, String.format("%.2f", total))
         }
     }
 }
