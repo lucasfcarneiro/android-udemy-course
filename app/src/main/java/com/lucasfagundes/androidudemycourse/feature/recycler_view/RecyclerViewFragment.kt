@@ -12,7 +12,7 @@ import com.lucasfagundes.androidudemycourse.databinding.FragmentRecyclerViewBind
 class RecyclerViewFragment : Fragment() {
 
     private lateinit var binding: FragmentRecyclerViewBinding
-    private lateinit var movieListAdapter : MovieListAdapter
+    private lateinit var movieListAdapter: MovieListAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,

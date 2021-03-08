@@ -5,10 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.lucasfagundes.androidudemycourse.databinding.MovieItemRecyclerViewBinding
 
-class MovieListAdapter (private val movieList: List<Movie>) : RecyclerView.Adapter<MovieListAdapter.ViewHolder>() {
+class MovieListAdapter(private val movieList: List<Movie>) :
+    RecyclerView.Adapter<MovieListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieListAdapter.ViewHolder {
-        val binding = MovieItemRecyclerViewBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding =
+            MovieItemRecyclerViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
@@ -18,7 +20,8 @@ class MovieListAdapter (private val movieList: List<Movie>) : RecyclerView.Adapt
         holder.bind(movieList[position])
     }
 
-    class ViewHolder(private val binding: MovieItemRecyclerViewBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(private val binding: MovieItemRecyclerViewBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(movie: Movie) {
             binding.movieTitleTextView.text = movie.title
             binding.movieYearTextView.text = movie.year
