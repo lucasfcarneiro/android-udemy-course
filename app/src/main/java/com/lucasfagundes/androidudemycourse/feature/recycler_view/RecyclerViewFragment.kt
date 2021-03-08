@@ -5,13 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.lucasfagundes.androidudemycourse.adapter.Movie
-import com.lucasfagundes.androidudemycourse.adapter.MovieListAdapter
+import com.lucasfagundes.androidudemycourse.feature.recycler_view.adapter.Movie
+import com.lucasfagundes.androidudemycourse.feature.recycler_view.adapter.MovieListAdapter
 import com.lucasfagundes.androidudemycourse.databinding.FragmentRecyclerViewBinding
 
 class RecyclerViewFragment : Fragment() {
 
     private lateinit var binding: FragmentRecyclerViewBinding
+    private lateinit var movieListAdapter : MovieListAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,6 +25,9 @@ class RecyclerViewFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        
+
+        //config recycler view
+        movieListAdapter = MovieListAdapter(Movie.DUMBLIST)
+        binding.movieRecyclerView.adapter = movieListAdapter
     }
 }
