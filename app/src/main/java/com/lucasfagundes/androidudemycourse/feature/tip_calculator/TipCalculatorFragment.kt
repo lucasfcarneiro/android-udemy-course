@@ -1,6 +1,5 @@
 package com.lucasfagundes.androidudemycourse.feature.tip_calculator
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,7 +9,6 @@ import android.widget.SeekBar
 import android.widget.Toast
 import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.FragmentTipCalculatorBinding
-import kotlin.math.roundToInt
 
 class TipCalculatorFragment : Fragment() {
 
@@ -39,8 +37,7 @@ class TipCalculatorFragment : Fragment() {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
 
                 seekBar.let {
-                    percentage = progress.toDouble()
-                    binding.textViewPorcentage.text = getString(R.string.percent)  //"${percentage.roundToInt()}%"
+                    binding.textViewPorcentage.text = getString(R.string.percent  , progress.toString())
                 }
                 billValue = binding.textEditBillValue.text.toString()
                 calculateTip(percentage)
@@ -56,21 +53,29 @@ class TipCalculatorFragment : Fragment() {
 
     private fun calculateTip(percentage: Double) {
 
-        if (billValue.isBlank()) {
+        val fieldValidated = validateField(billValue)
 
-            val emptyBill =
-                Toast.makeText(context, "Digite o valor da conta", Toast.LENGTH_SHORT)
-            emptyBill.show()
-
-            binding.textViewTipValue.text = getString(R.string.value_text)
-            binding.textViewTotalValue.text = getString(R.string.value_text)
-        } else {
-
+        if (fieldValidated){
             val tip = billValue.toDouble() * (percentage / 100)
             val total = billValue.toDouble() + tip
 
-            binding.textViewTipValue.text = getString(R.string.money, String.format("%.2f", tip))
-            binding.textViewTotalValue.text = getString(R.string.money, String.format("%.2f", total))
+            binding.textViewTipValue.text =
+                getString(R.string.money, String.format("%.2f", tip))
+            binding.textViewTotalValue.text =
+                getString(R.string.money, String.format("%.2f", total))
+        }else{
+            Toast.makeText(context, "Digite o valor da conta", Toast.LENGTH_SHORT).show()
+            binding.textViewTipValue.text = getString(R.string.value_text)
+            binding.textViewTotalValue.text = getString(R.string.value_text)
         }
+    }
+
+    private fun validateField(value:String): Boolean{
+        var isValid = true
+
+        if (value.isBlank()){
+            isValid = false
+        }
+        return isValid
     }
 }
