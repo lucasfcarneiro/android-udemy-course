@@ -38,5 +38,11 @@
     <string name="relation_price_info">%1$s é o preço do alcool em relação a gasolina</string>
     <string name="empty_field">Campo vazio</string>
 
+    <string name="recycler_view">Recycler View</string>
+    <string name="title_text">Titulo</string>
+    <string name="year_text">Ano</string>
+    <string name="gender_text">Genero</string>
+
+
 </resources>
 

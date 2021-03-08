@@ -6,16 +6,23 @@
     app:startDestination="@id/nav_home">
 
     <fragment
-        android:id="@+id/nav_random_number"
-        android:name="com.lucasfagundes.androidudemycourse.feature.random_number.RandomNumberFragment"
-        android:label="@string/random_number"
-        tools:layout="@layout/fragment_random_number" />
-    
-    <fragment
         android:id="@+id/nav_home"
         android:name="com.lucasfagundes.androidudemycourse.feature.home.HomeFragment"
         android:label="@string/home"
         tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_recycler_view"
+        android:name="com.lucasfagundes.androidudemycourse.feature.recycler_view.RecyclerViewFragment"
+        android:label="@string/recycler_view"
+        tools:layout="@layout/fragment_recycler_view" />
+
+    <fragment
+        android:id="@+id/nav_random_number"
+        android:name="com.lucasfagundes.androidudemycourse.feature.random_number.RandomNumberFragment"
+        android:label="@string/random_number"
+        tools:layout="@layout/fragment_random_number" />
+
     <fragment
         android:id="@+id/nav_rock_paper_scissors"
         android:name="com.lucasfagundes.androidudemycourse.feature.rock_paper_scissors.RockPaperScissorsFragment"
@@ -27,5 +34,6 @@
         android:name="com.lucasfagundes.androidudemycourse.feature.alcohol_gasoline.AlcoholGasolineFragment"
         android:label="@string/alcohol_gasoline"
         tools:layout="@layout/fragment_alcohol_gasoline" />
+
 
 </navigation>
