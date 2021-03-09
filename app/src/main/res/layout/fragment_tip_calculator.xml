@@ -30,8 +30,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textEditBillValue"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_bill_price" />
+            android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatTextView

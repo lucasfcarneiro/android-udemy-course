@@ -27,55 +27,51 @@ class TipCalculatorFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupView()
         seekBarHandler()
     }
 
+    private fun setupView() {
+        binding.textViewTipValue.text = getString(R.string.value_text)
+        binding.textViewTotalValue.text = getString(R.string.value_text)
+        binding.textEditBillValue.hint =
+            "${getString(R.string.hint_bill_text)} ${getString(R.string.hint_bill_value)}"
+    }
+
     private fun seekBarHandler() {
-
         binding.seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-
                 seekBar.let {
-                    binding.textViewPorcentage.text = getString(R.string.percent  , progress.toString())
+                    binding.textViewPorcentage.text =
+                        getString(R.string.percent, progress.toString())
                 }
                 billValue = binding.textEditBillValue.text.toString()
-                calculateTip(percentage)
+                percentage = progress.toDouble()
+                if (billValue.isNotBlank()) {
+                    calculateTip(percentage)
+                }
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
             }
 
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                if (billValue.isBlank()) {
+                    Toast.makeText(context, getString(R.string.hint_bill_text), Toast.LENGTH_SHORT)
+                        .show()
+                }
             }
         })
     }
 
     private fun calculateTip(percentage: Double) {
 
-        val fieldValidated = validateField(billValue)
+        val tip = billValue.toDouble() * (percentage / 100)
+        val total = billValue.toDouble() + tip
 
-        if (fieldValidated){
-            val tip = billValue.toDouble() * (percentage / 100)
-            val total = billValue.toDouble() + tip
-
-            binding.textViewTipValue.text =
-                getString(R.string.money, String.format("%.2f", tip))
-            binding.textViewTotalValue.text =
-                getString(R.string.money, String.format("%.2f", total))
-        }else{
-            Toast.makeText(context, "Digite o valor da conta", Toast.LENGTH_SHORT).show()
-            binding.textViewTipValue.text = getString(R.string.value_text)
-            binding.textViewTotalValue.text = getString(R.string.value_text)
-        }
-    }
-
-    private fun validateField(value:String): Boolean{
-        var isValid = true
-
-        if (value.isBlank()){
-            isValid = false
-        }
-        return isValid
+        binding.textViewTipValue.text =
+            getString(R.string.money, String.format("%.2f", tip))
+        binding.textViewTotalValue.text =
+            getString(R.string.money, String.format("%.2f", total))
     }
 }
