@@ -49,5 +49,10 @@
     <string name="money">R$ %1$s</string>
     <string name="percent">%1$s %%</string>
 
+    <string name="recycler_view">Recycler View</string>
+    <string name="title_text">Titulo</string>
+    <string name="year_text">Ano</string>
+    <string name="genre_text">Genero</string>
+
 </resources>
 
