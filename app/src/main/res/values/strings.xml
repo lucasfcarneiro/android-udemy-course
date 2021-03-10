@@ -12,6 +12,8 @@
     <string name="action_about">About</string>
 
     <string name="home">Home</string>
+    <string name="about">Bacharel em Sistemas de Informações pela PUC Minas, atuo no setor de redes da prefeitura de Betim
+        e estou em busca de oportunidades como Desenvolvedor Android com foco em Kotlin. </string>
 
     <string name="random_number">Numero Aleatorio</string>
     <string name="button_play">Jogar</string>
@@ -53,6 +55,8 @@
     <string name="title_text">Titulo</string>
     <string name="year_text">Ano</string>
     <string name="genre_text">Genero</string>
+    <string name="linkedin">Linkedin</string>
+    <string name="github">github</string>
 
 </resources>
 
