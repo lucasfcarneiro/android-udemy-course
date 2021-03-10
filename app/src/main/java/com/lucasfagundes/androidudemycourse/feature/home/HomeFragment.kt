@@ -23,11 +23,11 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.linkedinButton.setOnClickListener{
+        binding.linkedinImageView.setOnClickListener{
             val urlLinkedin = "https://www.linkedin.com/in/lucasfcarneiro/"
             getUrlFromIntent(this, urlLinkedin)
         }
-        binding.githubButton.setOnClickListener{
+        binding.githubImageView.setOnClickListener{
             val urlGit = "https://github.com/lucasfcarneiro"
             getUrlFromIntent(this, urlGit)
         }
