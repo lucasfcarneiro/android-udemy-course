@@ -9,9 +9,9 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/firstPriceInputText"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         app:boxBackgroundColor="@color/light_blue"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +30,6 @@
         android:id="@+id/firstRadioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,9 +67,11 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/resultFirstTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/light_gray"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,14 +80,14 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/secondPriceInputText"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        app:boxBackgroundColor="@color/light_blue"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        app:boxBackgroundColor="@color/light_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/resultFirstTextView">
+        app:layout_constraintTop_toBottomOf="@id/resultFirstTextView">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/secondPriceEditText"
@@ -100,7 +101,6 @@
         android:id="@+id/secondRadioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -138,15 +138,29 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/resultSecondTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/light_gray"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/secondRadioGroup" />
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/resultFinalTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/light_gray"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resultSecondTextView" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/appCompatTextView"
@@ -162,13 +176,13 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/firstMLInputText"
         android:layout_width="150dp"
-        android:layout_height="37dp"
-        app:layout_constraintVertical_bias="0"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
         app:boxBackgroundColor="@color/light_blue"
         app:layout_constraintEnd_toStartOf="@+id/secondMLInputText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView">
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView"
+        app:layout_constraintVertical_bias="0">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/firstMLEditText"
@@ -182,13 +196,13 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/secondMLInputText"
         android:layout_width="150dp"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
         app:boxBackgroundColor="@color/light_blue"
-        app:layout_constraintVertical_bias="0"
-        android:layout_height="37dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/firstMLInputText"
         app:layout_constraintTop_toBottomOf="@+id/appCompatTextView"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintVertical_bias="0">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/secondMLEditText"
@@ -197,16 +211,6 @@
             android:hint="Segundo item"
             android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/resultFinalTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/resultSecondTextView" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/calcButton"
