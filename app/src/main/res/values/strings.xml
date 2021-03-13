@@ -54,5 +54,11 @@
     <string name="year_text">Ano</string>
     <string name="genre_text">Genero</string>
 
+    <string name="atm_consultancy">ATM Consultoria</string>
+    <string name="nav_header_atm_title">ATM Consultoria</string>
+    <string name="nav_header_atm_subtitle">atendimento@atmconsultoria.com.br</string>
+
+
+
 </resources>
 
