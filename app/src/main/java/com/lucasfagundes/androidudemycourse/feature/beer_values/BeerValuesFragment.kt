@@ -52,7 +52,7 @@ class BeerValuesFragment : Fragment() {
         val isValid: Boolean
         if (text.isBlank() || text2.isBlank()) {
             isValid = false
-            Toast.makeText(context, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, R.string.enter_all_fields, Toast.LENGTH_SHORT).show()
         } else {
             isValid = true
         }
@@ -65,7 +65,7 @@ class BeerValuesFragment : Fragment() {
             isValid = true
         } else {
             isValid = false
-            Toast.makeText(context, "Selecione as duas medidas", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, R.string.select_all_measures, Toast.LENGTH_SHORT).show()
         }
         return isValid
     }
@@ -113,23 +113,26 @@ class BeerValuesFragment : Fragment() {
     }
 
     private fun displayResults() {
-        binding.resultFirstTextView.text = String.format("%.2f",
-            firstMlValue?.let {
-                calculatePrice(
-                    it,
-                    binding.firstPriceEditText.toPrice()
-                )
-            }
-        )
 
-        binding.resultSecondTextView.text = String.format("%.2f",
-            secondMlValue?.let {
-                calculatePrice(
-                    it,
-                    binding.secondPriceEditText.toPrice()
-                )
+        val firstLiterPrice =
+            firstMlValue?.let { calculatePrice(it, binding.firstPriceEditText.toPrice()) }
+        binding.resultFirstTextView.text =
+            String.format("O preço do litro é: R$ %.2f ", firstLiterPrice)
+
+        val secondLiterPrice =
+            secondMlValue?.let { calculatePrice(it, binding.secondPriceEditText.toPrice()) }
+        binding.resultSecondTextView.text =
+            String.format("O preço do litro é: R$ %.2f ", secondLiterPrice)
+
+        if (firstLiterPrice != null) {
+            when {
+                firstLiterPrice > secondLiterPrice!! -> binding.resultFinalTextView.text =
+                    getString(R.string.better_buy_second)
+                firstLiterPrice == secondLiterPrice -> binding.resultFinalTextView.text =
+                    getString(R.string.equal_prices)
+                else -> binding.resultFinalTextView.text = getString(R.string.better_buy_first)
             }
-        )
+        }
     }
 
     private fun cleanFields() {
@@ -148,5 +151,5 @@ class BeerValuesFragment : Fragment() {
 }
 
 
-//"O preço do litro é: ${String.format("%.2f", secondLiterPrice)} reais"
+//"O preço do litro é: String.format("%.2f", secondLiterPrice)} reais"
 //"Melhor comprar a segunda opção: ${secondRadioButtonValue.toInt()} ML"

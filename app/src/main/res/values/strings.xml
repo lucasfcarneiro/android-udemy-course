@@ -46,10 +46,11 @@
     <string name="radio_button_473">473 ML</string>
     <string name="radio_button_600">600 ML</string>
     <string name="equal_prices">Os preços são iguais</string>
-    <string name="better_first_option">Melhor comprar a primeira opção: %1$s ML</string>
-    <string name="better_second_option">Melhor comprar a segunda opção: %1$s ML</string>
-    <string name="liter_price">O preço do litro é: %1$s reais</string>
-    <string name="diferent_ML">ou digite uma quantidade de ML diferente abaixo</string>
+    <string name="enter_all_fields">Preencha todos os campos</string>
+    <string name="select_all_measures">Selecione as duas medidas</string>
+    <string name="better_buy_first">Melhor comprar o primeiro</string>
+    <string name="better_buy_second">Melhor comprar o segundo</string>
+    <string name="liter_price">O preço do litro é: R$ %1$s</string>
 
 </resources>
 

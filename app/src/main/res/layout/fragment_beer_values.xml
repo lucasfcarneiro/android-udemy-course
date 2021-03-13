@@ -1,198 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".feature.beer_values.BeerValuesFragment">
+    android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/beerImageView"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:adjustViewBounds="true"
-        android:src="@drawable/cervejas"
-        app:layout_constraintBottom_toTopOf="@id/firstPriceInputText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/firstPriceInputText"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
-        app:boxBackgroundColor="@color/light_blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/beerImageView">
+        android:layout_width="match_parent"
+        tools:context=".feature.beer_values.BeerValuesFragment">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/firstPriceEditText"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/beerImageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/secondUnitPriceTextInput"
-            android:inputType="numberDecimal" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/cerveja"
+            app:layout_constraintBottom_toTopOf="@id/firstPriceInputText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <RadioGroup
-        android:id="@+id/firstRadioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/firstPriceInputText">
-
-        <RadioButton
-            android:id="@+id/Ml250Radio"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/firstPriceInputText"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/radio_button_250" />
-
-        <RadioButton
-            android:id="@+id/Ml350Radio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/radio_button_350" />
-
-        <RadioButton
-            android:id="@+id/Ml473Radio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/radio_button_473" />
-
-        <RadioButton
-            android:id="@+id/Ml600Radio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/radio_button_600" />
-
-    </RadioGroup>
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/resultFirstTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/light_gray"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/firstRadioGroup" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/secondPriceInputText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        app:boxBackgroundColor="@color/light_blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/resultFirstTextView">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/secondPriceEditText"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
+            app:boxBackgroundColor="@color/light_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/beerImageView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:hint="@string/secondUnitPriceTextInput"
+                android:id="@+id/firstPriceEditText"
+                android:inputType="numberDecimal"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RadioGroup
+            android:id="@+id/firstRadioGroup"
             android:layout_height="wrap_content"
-            android:hint="@string/firstUnitPriceTextInput"
-            android:inputType="numberDecimal" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <RadioGroup
-        android:id="@+id/secondRadioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/secondPriceInputText">
-
-        <RadioButton
-            android:id="@+id/Ml250Radio2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/radio_button_250" />
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/firstPriceInputText">
 
-        <RadioButton
-            android:id="@+id/Ml350Radio2"
+            <RadioButton
+                android:id="@+id/Ml250Radio"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:text="@string/radio_button_250" />
+
+            <RadioButton
+                android:id="@+id/Ml350Radio"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:text="@string/radio_button_350" />
+
+            <RadioButton
+                android:id="@+id/Ml473Radio"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:text="@string/radio_button_473" />
+
+            <RadioButton
+                android:id="@+id/Ml600Radio"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:text="@string/radio_button_600" />
+
+        </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:background="@color/light_gray"
+            android:id="@+id/resultFirstTextView"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/firstRadioGroup" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/secondPriceInputText"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            app:boxBackgroundColor="@color/light_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/resultFirstTextView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:hint="@string/firstUnitPriceTextInput"
+                android:id="@+id/secondPriceEditText"
+                android:inputType="numberDecimal"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RadioGroup
+            android:id="@+id/secondRadioGroup"
+            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/radio_button_350" />
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/secondPriceInputText">
 
-        <RadioButton
-            android:id="@+id/Ml473Radio2"
+            <RadioButton
+                android:id="@+id/Ml250Radio2"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:text="@string/radio_button_250" />
+
+            <RadioButton
+                android:id="@+id/Ml350Radio2"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:text="@string/radio_button_350" />
+
+            <RadioButton
+                android:id="@+id/Ml473Radio2"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:text="@string/radio_button_473" />
+
+            <RadioButton
+                android:id="@+id/Ml600Radio2"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:text="@string/radio_button_600" />
+
+        </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:background="@color/light_gray"
+            android:id="@+id/resultSecondTextView"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/secondRadioGroup" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:background="@color/light_gray"
+            android:id="@+id/resultFinalTextView"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/resultSecondTextView" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/calcButton"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/radio_button_473" />
+            android:text="@string/calculate"
+            app:layout_constraintTop_toBottomOf="@id/resultFinalTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cleanButton" />
 
-        <RadioButton
-            android:id="@+id/Ml600Radio2"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cleanButton"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/radio_button_600" />
+            android:text="@string/clean"
+            app:layout_constraintTop_toBottomOf="@id/resultFinalTextView"
+            app:layout_constraintEnd_toStartOf="@id/calcButton"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    </RadioGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/resultSecondTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/light_gray"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/secondRadioGroup" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/resultFinalTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/light_gray"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/resultSecondTextView" />
-
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/calcButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="@string/calculate"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/cleanButton" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/cleanButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="@string/clean"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/calcButton"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
