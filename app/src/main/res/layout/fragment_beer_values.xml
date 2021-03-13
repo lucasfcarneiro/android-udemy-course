@@ -6,17 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".feature.beer_values.BeerValuesFragment">
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/beerImageView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/cervejas"
+        app:layout_constraintBottom_toTopOf="@id/firstPriceInputText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/firstPriceInputText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
         app:boxBackgroundColor="@color/light_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/beerImageView">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/firstPriceEditText"
@@ -162,55 +173,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/resultSecondTextView" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/appCompatTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="@string/diferent_ML"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/resultFinalTextView" />
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/firstMLInputText"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:boxBackgroundColor="@color/light_blue"
-        app:layout_constraintEnd_toStartOf="@+id/secondMLInputText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView"
-        app:layout_constraintVertical_bias="0">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/firstMLEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Primeiro item"
-            android:inputType="numberDecimal" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/secondMLInputText"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:boxBackgroundColor="@color/light_blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/firstMLInputText"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView"
-        app:layout_constraintVertical_bias="0">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/secondMLEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Segundo item"
-            android:inputType="numberDecimal" />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/calcButton"

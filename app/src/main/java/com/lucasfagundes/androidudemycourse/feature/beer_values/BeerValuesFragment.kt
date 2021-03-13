@@ -6,13 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioGroup
-import com.google.android.material.textfield.TextInputEditText
+import android.widget.Toast
 import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.FragmentBeerValuesBinding
+import com.lucasfagundes.androidudemycourse.feature.beer_values.utils.toPrice
 
 class BeerValuesFragment : Fragment() {
 
-    var valor = 0
+    private var firstRadioGroupSelected = false
+    private var secondRadioGroupSelected = false
+    private var firstMlValue: Int? = null
+    private var secondMlValue: Int? = null
+
     private lateinit var binding: FragmentBeerValuesBinding
 
     override fun onCreateView(
@@ -25,52 +30,106 @@ class BeerValuesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.cleanButton.setOnClickListener { cleanFields() }
+
+        handleRadioGroup(binding.firstRadioGroup)
+        handleRadioGroup(binding.secondRadioGroup)
 
         binding.calcButton.setOnClickListener {
-            val radioMlValue1 = checkRadioValue(binding.firstRadioGroup)
-            val radioMlValue2 = checkRadioValue(binding.secondRadioGroup)
+            if (validateFields()) {
+                displayResults()
+            }
+        }
 
-            if(radioMlValue1 == 0 && radioMlValue2 == 0){ //se nao clicou no radio faz
-                val enteredValue = checkTextEditValue(binding.firstMLEditText)
-                val enteredValue2 = checkTextEditValue(binding.secondMLEditText)
+        binding.cleanButton.setOnClickListener { cleanFields() }
+    }
 
-                val literPrice = calculatePrice(enteredValue,binding.firstPriceEditText)
-                val literPrice2 =calculatePrice(enteredValue2,binding.secondPriceEditText)
-                displayResults(literPrice,literPrice2)
+    private fun validateFields(): Boolean {
+        return validateInput(binding.firstPriceEditText.text.toString(),
+            binding.secondPriceEditText.text.toString()) && validateRadioGroup()
+    }
 
-            }else{ // se clicou radio faz
-                val literPrice = calculatePrice(radioMlValue1,binding.firstPriceEditText)
-                val literPrice2 = calculatePrice(radioMlValue2, binding.secondPriceEditText)
-                displayResults(literPrice,literPrice2)
+    private fun validateInput(text: String, text2: String): Boolean {
+        val isValid: Boolean
+        if (text.isBlank() || text2.isBlank()) {
+            isValid = false
+            Toast.makeText(context, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
+        } else {
+            isValid = true
+        }
+        return isValid
+    }
+
+    private fun validateRadioGroup(): Boolean {
+        val isValid: Boolean
+        if (firstRadioGroupSelected && secondRadioGroupSelected) {
+            isValid = true
+        } else {
+            isValid = false
+            Toast.makeText(context, "Selecione as duas medidas", Toast.LENGTH_SHORT).show()
+        }
+        return isValid
+    }
+
+    private fun setRadioGroupSelected(radio: RadioGroup) {
+        when (radio.id) {
+            R.id.firstRadioGroup -> firstRadioGroupSelected = true
+            R.id.secondRadioGroup -> secondRadioGroupSelected = true
+        }
+    }
+
+    private fun setMlValue(radio: RadioGroup, mlValue: Int) {
+        when (radio.id) {
+            R.id.firstRadioGroup -> firstMlValue = mlValue
+            R.id.secondRadioGroup -> secondMlValue = mlValue
+        }
+    }
+
+    private fun handleRadioGroup(radioGroup: RadioGroup) {
+        radioGroup.setOnCheckedChangeListener { radioGroup, id ->
+            when (id) {
+                R.id.Ml250Radio, R.id.Ml250Radio2 -> {
+                    setRadioGroupSelected(radioGroup)
+                    setMlValue(radioGroup, 250)
+                }
+                R.id.Ml350Radio, R.id.Ml350Radio2 -> {
+                    setRadioGroupSelected(radioGroup)
+                    setMlValue(radioGroup, 350)
+                }
+                R.id.Ml473Radio, R.id.Ml473Radio2 -> {
+                    setRadioGroupSelected(radioGroup)
+                    setMlValue(radioGroup, 473)
+                }
+                R.id.Ml600Radio, R.id.Ml600Radio2 -> {
+                    setRadioGroupSelected(radioGroup)
+                    setMlValue(radioGroup, 600)
+                }
             }
         }
     }
 
-    private fun checkTextEditValue(textInputEditText:TextInputEditText): Int {
-        //tratar se tiver vazio
-        return textInputEditText.text.toString().toInt()
+    private fun calculatePrice(mlValue: Int, price: Double): Double {
+        val numberOfCans: Double = 1000.0 / mlValue
+        return numberOfCans * price
     }
 
-    private fun displayResults(qtd: Double, qtd2: Double) {
-        binding.resultFirstTextView.text = String.format("%.2f", qtd)
-        binding.resultSecondTextView.text = String.format("%.2f", qtd2)
-    }
+    private fun displayResults() {
+        binding.resultFirstTextView.text = String.format("%.2f",
+            firstMlValue?.let {
+                calculatePrice(
+                    it,
+                    binding.firstPriceEditText.toPrice()
+                )
+            }
+        )
 
-    private fun checkRadioValue(radio: RadioGroup): Int {
-
-        return when (radio.checkedRadioButtonId) {
-            R.id.Ml250Radio, R.id.Ml250Radio2 -> 250
-            R.id.Ml350Radio, R.id.Ml350Radio2 -> 350
-            R.id.Ml473Radio, R.id.Ml473Radio2 -> 473
-            R.id.Ml600Radio, R.id.Ml600Radio2 -> 600
-            else -> 0
-        }
-    }
-
-    private fun calculatePrice(canMlValue: Int, canPrice: TextInputEditText): Double {
-        val numberOfCans:Double = 1000.0 / canMlValue
-        return numberOfCans * canPrice.text.toString().toDouble()
+        binding.resultSecondTextView.text = String.format("%.2f",
+            secondMlValue?.let {
+                calculatePrice(
+                    it,
+                    binding.secondPriceEditText.toPrice()
+                )
+            }
+        )
     }
 
     private fun cleanFields() {
@@ -81,6 +140,10 @@ class BeerValuesFragment : Fragment() {
         binding.resultFinalTextView.text = ""
         binding.secondRadioGroup.clearCheck()
         binding.firstRadioGroup.clearCheck()
+        firstRadioGroupSelected = false
+        secondRadioGroupSelected = false
+        firstMlValue = null
+        secondMlValue = null
     }
 }
 
