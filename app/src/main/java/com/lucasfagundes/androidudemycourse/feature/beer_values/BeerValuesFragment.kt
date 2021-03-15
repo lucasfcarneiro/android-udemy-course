@@ -13,12 +13,12 @@ import com.lucasfagundes.androidudemycourse.feature.beer_values.utils.toPrice
 
 class BeerValuesFragment : Fragment() {
 
+    private lateinit var binding: FragmentBeerValuesBinding
+
     private var firstRadioGroupSelected = false
     private var secondRadioGroupSelected = false
     private var firstMlValue: Int? = null
     private var secondMlValue: Int? = null
-
-    private lateinit var binding: FragmentBeerValuesBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -124,16 +124,15 @@ class BeerValuesFragment : Fragment() {
         binding.resultSecondTextView.text =
             String.format("O preço do litro é: R$ %.2f ", secondLiterPrice)
 
-        if (firstLiterPrice != null) {
-            when {
-                firstLiterPrice > secondLiterPrice!! -> binding.resultFinalTextView.text =
-                    getString(R.string.better_buy_second)
-                firstLiterPrice == secondLiterPrice -> binding.resultFinalTextView.text =
-                    getString(R.string.equal_prices)
-                else -> binding.resultFinalTextView.text = getString(R.string.better_buy_first)
-            }
+        when {
+            firstLiterPrice > secondLiterPrice -> binding.resultFinalTextView.text =
+                getString(R.string.better_buy_second)
+            firstLiterPrice == secondLiterPrice -> binding.resultFinalTextView.text =
+                getString(R.string.equal_prices)
+            else -> binding.resultFinalTextView.text = getString(R.string.better_buy_first)
         }
     }
+
 
     private fun cleanFields() {
         binding.firstPriceEditText.setText("")
@@ -149,7 +148,3 @@ class BeerValuesFragment : Fragment() {
         secondMlValue = null
     }
 }
-
-
-//"O preço do litro é: String.format("%.2f", secondLiterPrice)} reais"
-//"Melhor comprar a segunda opção: ${secondRadioButtonValue.toInt()} ML"
