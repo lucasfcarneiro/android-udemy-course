@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".feature.atm_consultancy.AtmConsultancyActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -12,7 +12,7 @@
         android:theme="@style/Theme.AndroidUdemyCourse.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbarAtm"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
@@ -21,7 +21,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <include
-        android:id="@+id/contentMain"
-        layout="@layout/content_main" />
+        android:id="@+id/contentAtm"
+        layout="@layout/content_atm" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -39,10 +39,5 @@
         android:name="com.lucasfagundes.androidudemycourse.feature.tip_calculator.TipCalculatorFragment"
         android:label="@string/tip_calculator"
         tools:layout="@layout/fragment_tip_calculator" />
-    <activity
-        android:id="@+id/nav_atm_consultancy"
-        android:name="com.lucasfagundes.androidudemycourse.feature.atm_consultancy.AtmConsultancyActivity"
-        android:label="@string/atm_consultancy"
-        tools:layout="@layout/activity_atm_consultancy" />
 
 </navigation>

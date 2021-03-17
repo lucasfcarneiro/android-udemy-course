@@ -11,7 +11,7 @@
 
     <include
         android:id="@+id/appBarMainAtm"
-        layout="@layout/app_bar_main"
+        layout="@layout/app_bar_atm"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -24,6 +24,5 @@
         app:headerLayout="@layout/nav_header_atm"
         app:menu ="@menu/activity_atm_drawer"
         />
-
 
 </androidx.drawerlayout.widget.DrawerLayout>

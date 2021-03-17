@@ -57,7 +57,19 @@
     <string name="atm_consultancy">ATM Consultoria</string>
     <string name="nav_header_atm_title">ATM Consultoria</string>
     <string name="nav_header_atm_subtitle">atendimento@atmconsultoria.com.br</string>
+    <string name="home_atm">home atm</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="title_activity_atm">AtmActivity</string>
 
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_teste">TesteActivity</string>
 
 
 </resources>
