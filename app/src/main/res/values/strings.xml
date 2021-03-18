@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Android Udemy Course</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_world">Hello Square World!</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -55,21 +56,12 @@
     <string name="genre_text">Genero</string>
 
     <string name="atm_consultancy">ATM Consultoria</string>
-    <string name="nav_header_atm_title">ATM Consultoria</string>
     <string name="nav_header_atm_subtitle">atendimento@atmconsultoria.com.br</string>
-    <string name="home_atm">home atm</string>
-    <string name="title_activity_main2">MainActivity2</string>
-    <!--
-    This string is used for square devices and overridden by hello_world in
-    values-round/strings.xml for round devices.
-    -->
-    <string name="hello_world">Hello Square World!</string>
-    <string name="title_activity_atm">AtmActivity</string>
-
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="title_activity_teste">TesteActivity</string>
+    <string name="main">Principal</string>
+    <string name="services">Serviços</string>
+    <string name="client">Clientes</string>
+    <string name="contact_us">Entre em contato</string>
+    <string name="contact">Contato</string>
 
 
 </resources>

@@ -13,9 +13,9 @@ import com.lucasfagundes.androidudemycourse.databinding.ActivityAtmConsultancyBi
 
 class AtmConsultancyActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityAtmConsultancyBinding
-    
+    private lateinit var appBarConfiguration: AppBarConfiguration
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAtmConsultancyBinding.inflate(layoutInflater)
@@ -27,7 +27,7 @@ class AtmConsultancyActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home_atm
+                R.id.nav_atm_main
             ), binding.drawerLayoutAtm
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
