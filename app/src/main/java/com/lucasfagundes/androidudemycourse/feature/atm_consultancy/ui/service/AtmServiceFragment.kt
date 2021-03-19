@@ -6,12 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.lucasfagundes.androidudemycourse.R
+import com.lucasfagundes.androidudemycourse.databinding.FragmentAboutAtmBinding
+import com.lucasfagundes.androidudemycourse.databinding.FragmentAtmMainBinding
+import com.lucasfagundes.androidudemycourse.databinding.FragmentAtmServiceBinding
 
 class AtmServiceFragment : Fragment() {
+
+    lateinit var binding: FragmentAtmServiceBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_about_atm, container, false)
+    ): View {
+        binding = FragmentAtmServiceBinding.inflate(inflater, container, false)
+        return binding.root
     }
 }
