@@ -15,7 +15,7 @@
             android:id="@+id/toolbarAtm"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/purple_atm_3"
+            android:background="@color/teal_200"
             app:popupTheme="@style/Theme.AndroidUdemyCourse.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>

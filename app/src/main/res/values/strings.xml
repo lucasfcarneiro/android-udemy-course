@@ -61,7 +61,7 @@
     <string name="services">Serviços</string>
     <string name="client">Clientes</string>
     <string name="contact_us">Entre em contato</string>
-    <string name="contact">Contato</string>
+    <string name="exit">Sair</string>
     <string name="atm_service_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis vehicula tortor. Aenean felis nulla, blandit a malesuada sed, ullamcorper at nisi. Etiam eget nunc nunc. Aenean elementum, turpis sit amet elementum imperdiet, erat justo fringilla eros, ac aliquet elit metus at turpis. Sed sed est et nulla dignissim vestibulum. Donec odio magna, rutrum eu accumsan eu, tristique a ligula. Aenean a felis quis enim dignissim suscipit et eget odio.</string>
     <string name="service_title">Sistema de gestão da qualidade</string>
     <string name="service_title_2">Indicadores de desempenho</string>

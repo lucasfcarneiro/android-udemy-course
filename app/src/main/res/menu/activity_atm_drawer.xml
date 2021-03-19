@@ -17,12 +17,12 @@
             android:icon="@drawable/ic_clients"
             android:title="@string/client" />
         <item
-            android:id="@+id/nav_atm_contact"
-            android:icon="@drawable/ic_mail"
-            android:title="@string/contact" />
-        <item
             android:id="@+id/nav_atm_about"
             android:icon="@drawable/ic_info"
             android:title="@string/action_about" />
+        <item
+            android:id="@+id/nav_atm_exit"
+            android:icon="@drawable/ic_exit"
+            android:title="@string/exit" />
     </group>
 </menu>

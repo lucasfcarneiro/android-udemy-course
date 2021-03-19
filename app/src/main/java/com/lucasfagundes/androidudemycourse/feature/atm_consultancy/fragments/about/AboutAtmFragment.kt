@@ -1,4 +1,4 @@
-package com.lucasfagundes.androidudemycourse.feature.atm_consultancy.ui.about
+package com.lucasfagundes.androidudemycourse.feature.atm_consultancy.fragments.about
 
 import android.os.Bundle
 import android.view.LayoutInflater

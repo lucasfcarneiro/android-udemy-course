@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".feature.atm_consultancy.ui.client.AtmClientFragment">
+    tools:context=".feature.atm_consultancy.fragments.client.AtmClientFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textView6"

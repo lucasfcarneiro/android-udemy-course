@@ -1,4 +1,4 @@
-package com.lucasfagundes.androidudemycourse.feature.atm_consultancy.ui.client
+package com.lucasfagundes.androidudemycourse.feature.atm_consultancy.fragments.client
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

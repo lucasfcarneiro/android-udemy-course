@@ -5,11 +5,9 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.ui.*
 import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.ActivityAtmConsultancyBinding
 
@@ -25,8 +23,7 @@ class AtmConsultancyActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMainAtm.toolbarAtm)
 
-        val fab: View = findViewById(R.id.fab)
-        fab.setOnClickListener { view ->
+        binding.appBarMainAtm.fab.setOnClickListener {
             sendMail()
         }
 
@@ -37,12 +34,22 @@ class AtmConsultancyActivity : AppCompatActivity() {
                 R.id.nav_atm_main,
                 R.id.nav_atm_service,
                 R.id.nav_atm_client,
-                R.id.nav_atm_contact,
-                R.id.nav_atm_about
+                R.id.nav_atm_about,
+                R.id.nav_atm_exit
             ), binding.drawerLayoutAtm
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
-        binding.navAtmView.setupWithNavController(navController)
+
+        binding.navAtmView.setNavigationItemSelectedListener { menuItem ->
+            val id = menuItem.itemId
+            if (id == R.id.nav_atm_exit) {
+                finish()
+            } else {
+                NavigationUI.onNavDestinationSelected(menuItem, navController);
+            }
+            binding.drawerLayoutAtm.closeDrawer(GravityCompat.START)
+            true
+        }
     }
 
     private fun sendMail() {
@@ -50,7 +57,7 @@ class AtmConsultancyActivity : AppCompatActivity() {
         val intent = Intent(Intent.ACTION_SEND)
         intent.putExtra(Intent.EXTRA_EMAIL, email)
         intent.type = "message/rfc822" //search: MIME TYPE
-        startActivity(Intent.createChooser(intent,getString(R.string.share)))
+        startActivity(Intent.createChooser(intent, getString(R.string.share)))
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
