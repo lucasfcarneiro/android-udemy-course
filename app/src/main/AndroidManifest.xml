@@ -9,16 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidUdemyCourse">
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.AndroidUdemyCourse.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".feature.atm_consultancy.AtmConsultancyActivity"
+            android:label="@string/atm_consultancy"
+            android:theme="@style/Theme.AtmConsultancy" />
     </application>
 
 </manifest>

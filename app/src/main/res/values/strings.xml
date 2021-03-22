@@ -54,5 +54,26 @@
     <string name="year_text">Ano</string>
     <string name="genre_text">Genero</string>
 
+    <string name="atm_consultancy">ATM Consultoria</string>
+    <string name="nav_header_atm_subtitle">atendimento@atmconsultoria.com.br</string>
+    <string name="main">Principal</string>
+    <string name="services">Serviços</string>
+    <string name="client">Clientes</string>
+    <string name="contact_us">Entre em contato</string>
+    <string name="exit">Sair</string>
+    <string name="atm_service_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis vehicula tortor. Aenean felis nulla, blandit a malesuada sed, ullamcorper at nisi. Etiam eget nunc nunc. Aenean elementum, turpis sit amet elementum imperdiet, erat justo fringilla eros, ac aliquet elit metus at turpis. Sed sed est et nulla dignissim vestibulum. Donec odio magna, rutrum eu accumsan eu, tristique a ligula. Aenean a felis quis enim dignissim suscipit et eget odio.</string>
+    <string name="service_title">Sistema de gestão da qualidade</string>
+    <string name="service_title_2">Indicadores de desempenho</string>
+    <string name="atm_client_subtitle">Em mais de 15 anos de existência a ATM acumula experiência em serviços de consultoria para empresas nacionais e multinacionais de diversos portes, tendo atendido mais de 1000 empresas desde sua abertura.</string>
+    <string name="cielo">Cielo</string>
+    <string name="braskem">Braskem</string>
+    <string name="gerdau">Gerdau</string>
+    <string name="embraer">Embraer</string>
+    <string name="natura">Natura</string>
+    <string name="americanas_store">Lojas Americanas</string>
+    <string name="open_email_fab_description">Open email</string>
+    <string name="share">Compartilhar</string>
+
+
 </resources>
 

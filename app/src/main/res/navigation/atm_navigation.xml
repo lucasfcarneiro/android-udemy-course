@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/atm_navigation"
+    app:startDestination="@id/nav_atm_main">
+
+    <fragment
+        android:id="@+id/nav_atm_main"
+        android:name="com.lucasfagundes.androidudemycourse.feature.atm_consultancy.fragments.main_atm.AtmMainFragment"
+        android:label="@string/main"
+        tools:layout="@layout/fragment_atm_main" />
+    <fragment
+        android:id="@+id/nav_atm_service"
+        android:name="com.lucasfagundes.androidudemycourse.feature.atm_consultancy.fragments.service.AtmServiceFragment"
+        android:label="@string/services"
+        tools:layout="@layout/fragment_atm_service" />
+    <fragment
+        android:id="@+id/nav_atm_client"
+        android:name="com.lucasfagundes.androidudemycourse.feature.atm_consultancy.fragments.client.AtmClientFragment"
+        android:label="@string/client"
+        tools:layout="@layout/fragment_atm_client" />
+    <fragment
+        android:id="@+id/nav_atm_about"
+        android:name="com.lucasfagundes.androidudemycourse.feature.atm_consultancy.fragments.about.AboutAtmFragment"
+        android:label="@string/action_about"
+        tools:layout="@layout/fragment_about_atm" />
+
+</navigation>
