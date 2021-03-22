@@ -20,7 +20,6 @@ class AtmConsultancyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAtmConsultancyBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         setSupportActionBar(binding.appBarMainAtm.toolbarAtm)
 
         binding.appBarMainAtm.fab.setOnClickListener {
