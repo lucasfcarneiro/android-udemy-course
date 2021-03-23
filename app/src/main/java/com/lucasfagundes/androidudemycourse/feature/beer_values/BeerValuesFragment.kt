@@ -17,8 +17,8 @@ class BeerValuesFragment : Fragment() {
 
     private var firstRadioGroupSelected = false
     private var secondRadioGroupSelected = false
-    private var firstMlValue: Int? = null
-    private var secondMlValue: Int? = null
+    private var firstMlValue: Double = 0.0
+    private var secondMlValue: Double = 0.0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,7 +39,6 @@ class BeerValuesFragment : Fragment() {
                 displayResults()
             }
         }
-
         binding.cleanButton.setOnClickListener { cleanFields() }
     }
 
@@ -77,7 +76,7 @@ class BeerValuesFragment : Fragment() {
         }
     }
 
-    private fun setMlValue(radio: RadioGroup, mlValue: Int) {
+    private fun setMlValue(radio: RadioGroup, mlValue: Double) {
         when (radio.id) {
             R.id.firstRadioGroup -> firstMlValue = mlValue
             R.id.secondRadioGroup -> secondMlValue = mlValue
@@ -89,41 +88,43 @@ class BeerValuesFragment : Fragment() {
             when (id) {
                 R.id.Ml250Radio, R.id.Ml250Radio2 -> {
                     setRadioGroupSelected(radioGroup)
-                    setMlValue(radioGroup, 250)
+                    setMlValue(radioGroup, 250.0)
                 }
                 R.id.Ml350Radio, R.id.Ml350Radio2 -> {
                     setRadioGroupSelected(radioGroup)
-                    setMlValue(radioGroup, 350)
+                    setMlValue(radioGroup, 350.0)
                 }
                 R.id.Ml473Radio, R.id.Ml473Radio2 -> {
                     setRadioGroupSelected(radioGroup)
-                    setMlValue(radioGroup, 473)
+                    setMlValue(radioGroup, 473.0)
                 }
                 R.id.Ml600Radio, R.id.Ml600Radio2 -> {
                     setRadioGroupSelected(radioGroup)
-                    setMlValue(radioGroup, 600)
+                    setMlValue(radioGroup, 600.0)
                 }
             }
         }
     }
 
-    private fun calculatePrice(mlValue: Int, price: Double): Double {
-        val numberOfCans: Double = 1000.0 / mlValue
-        return numberOfCans * price
+    private fun calculatePrice(mlValue: Double, price: Double): Double {
+        val literDividedByMl = 1000.0 / mlValue
+        return literDividedByMl * price
     }
 
     private fun displayResults() {
 
-        val firstLiterPrice =
-            firstMlValue?.let { calculatePrice(it, binding.firstPriceEditText.toPrice()) }
+        val firstLiterPrice =  calculatePrice(firstMlValue, binding.firstPriceEditText.toPrice())
         binding.resultFirstTextView.text =
             String.format("O preço do litro é: R$ %.2f ", firstLiterPrice)
 
-        val secondLiterPrice =
-            secondMlValue?.let { calculatePrice(it, binding.secondPriceEditText.toPrice()) }
+        val secondLiterPrice =  calculatePrice(secondMlValue, binding.secondPriceEditText.toPrice())
         binding.resultSecondTextView.text =
             String.format("O preço do litro é: R$ %.2f ", secondLiterPrice)
 
+        showCheaperOption(firstLiterPrice,secondLiterPrice)
+    }
+
+    private fun showCheaperOption(firstLiterPrice: Double, secondLiterPrice: Double) {
         when {
             firstLiterPrice > secondLiterPrice -> binding.resultFinalTextView.text =
                 getString(R.string.better_buy_second)
@@ -132,7 +133,6 @@ class BeerValuesFragment : Fragment() {
             else -> binding.resultFinalTextView.text = getString(R.string.better_buy_first)
         }
     }
-
 
     private fun cleanFields() {
         binding.firstPriceEditText.setText("")
@@ -144,7 +144,7 @@ class BeerValuesFragment : Fragment() {
         binding.firstRadioGroup.clearCheck()
         firstRadioGroupSelected = false
         secondRadioGroupSelected = false
-        firstMlValue = null
-        secondMlValue = null
+        firstMlValue = 0.0
+        secondMlValue = 0.0
     }
 }
