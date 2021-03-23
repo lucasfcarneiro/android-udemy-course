@@ -6,22 +6,25 @@
     app:startDestination="@id/nav_home">
 
     <fragment
-        android:id="@+id/nav_random_number"
-        android:name="com.lucasfagundes.androidudemycourse.feature.random_number.RandomNumberFragment"
-        android:label="@string/random_number"
-        tools:layout="@layout/fragment_random_number" />
-    
-    <fragment
         android:id="@+id/nav_home"
         android:name="com.lucasfagundes.androidudemycourse.feature.home.HomeFragment"
         android:label="@string/home"
         tools:layout="@layout/fragment_home" />
     <fragment
+        android:id="@+id/nav_recycler_view"
+        android:name="com.lucasfagundes.androidudemycourse.feature.recycler_view.RecyclerViewFragment"
+        android:label="@string/recycler_view"
+        tools:layout="@layout/fragment_recycler_view" />
+    <fragment
+        android:id="@+id/nav_random_number"
+        android:name="com.lucasfagundes.androidudemycourse.feature.random_number.RandomNumberFragment"
+        android:label="@string/random_number"
+        tools:layout="@layout/fragment_random_number" />
+    <fragment
         android:id="@+id/nav_rock_paper_scissors"
         android:name="com.lucasfagundes.androidudemycourse.feature.rock_paper_scissors.RockPaperScissorsFragment"
         android:label="@string/rock_paper_scissors"
         tools:layout="@layout/fragment_rock_paper_scissors" />
-
     <fragment
         android:id="@+id/nav_alcohol_gasoline"
         android:name="com.lucasfagundes.androidudemycourse.feature.alcohol_gasoline.AlcoholGasolineFragment"
@@ -32,5 +35,9 @@
         android:name="com.lucasfagundes.androidudemycourse.feature.beer_values.BeerValuesFragment"
         android:label="@string/beer_values"
         tools:layout="@layout/fragment_beer_values" />
-
+    <fragment
+        android:id="@+id/nav_tip_calculator"
+        android:name="com.lucasfagundes.androidudemycourse.feature.tip_calculator.TipCalculatorFragment"
+        android:label="@string/tip_calculator"
+        tools:layout="@layout/fragment_tip_calculator" />
 </navigation>

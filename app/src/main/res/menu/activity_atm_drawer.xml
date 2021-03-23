@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_atm_main"
+            android:icon="@drawable/ic_inbox"
+            android:title="@string/main" />
+        <item
+            android:id="@+id/nav_atm_service"
+            android:icon="@drawable/ic_service_list"
+            android:title="@string/services" />
+        <item
+            android:id="@+id/nav_atm_client"
+            android:icon="@drawable/ic_clients"
+            android:title="@string/client" />
+        <item
+            android:id="@+id/nav_atm_about"
+            android:icon="@drawable/ic_info"
+            android:title="@string/action_about" />
+        <item
+            android:id="@+id/nav_atm_exit"
+            android:icon="@drawable/ic_exit"
+            android:title="@string/exit" />
+    </group>
+</menu>

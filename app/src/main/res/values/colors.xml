@@ -10,4 +10,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_blue">#BFCFFF</color>
     <color name="light_gray">#D3D3D3</color>
+    <color name="colorLightOrange">#E8A138</color>
+    <color name="pink_200">#FFA4C3</color>
+    <color name="pink_500">#F8548C</color>
+    <color name="pink_700">#FF1464</color>
+    <color name="purple_atm_1">#F3B4FF</color>
+    <color name="purple_atm_2">#C63FF8</color>
+    <color name="purple_atm_3">#CC07F8</color>
 </resources>
