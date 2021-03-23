@@ -4,15 +4,19 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
     <string name="nav_header_title">Lucas Fagundes</string>
     <string name="nav_header_subtitle">lukasfcarneiro@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
+
     <string name="action_settings">Settings</string>
     <string name="action_about">About</string>
 
+    <!--    Home-->
     <string name="home">Home</string>
 
+    <!--    Random Number-->
     <string name="random_number">Numero Aleatorio</string>
     <string name="button_play">Jogar</string>
     <string name="click_below">Clique abaixo</string>
@@ -20,6 +24,7 @@
     <string name="number_answer">Numero escolhido: %1$s</string>
     <string name="no_number_chosen">Nenhum numero escolhido </string>
 
+    <!--    Rock Paper Scissors-->
     <string name="rock_paper_scissors">Pedra Papel Tesoura</string>
     <string name="you_win">Voce Ganhou! </string>
     <string name="you_lose">Voce Perdeu! Loser</string>
@@ -27,17 +32,19 @@
     <string name="choice_app">Escolha do App</string>
     <string name="choose_option">Escolha uma Opcao</string>
 
+    <!--    Alcohol Gasoline-->
     <string name="alcohol_gasoline">Alcool ou Gasolina</string>
     <string name="subtitle_alcohol_gasoline">Saiba a melhor opção de abastecimento para seu veiculo</string>
     <string name="gasoline_name">Preço Gasoline ex: 4,50</string>
     <string name="alcohol_name">Preço Alcool ex: 2,90</string>
     <string name="better_alcohol">Melhor alcool</string>
     <string name="better_gasoline">Melhor gasolina</string>
-    <string name="clean_button">limpar</string>
-    <string name="calculate">calcular</string>
+    <string name="clean">Limpar</string>
+    <string name="calculate">Calcular</string>
     <string name="relation_price_info">%1$s é o preço do alcool em relação a gasolina</string>
     <string name="empty_field">Campo vazio</string>
 
+    <!--    Tip Calculator-->
     <string name="tip_calculator">Calcular Gorjeta</string>
     <string name="percentage_100">100%</string>
     <string name="percentage_0">0%</string>
@@ -49,11 +56,13 @@
     <string name="money">R$ %1$s</string>
     <string name="percent">%1$s %%</string>
 
+    <!--    Recycler View-->
     <string name="recycler_view">Recycler View</string>
     <string name="title_text">Titulo</string>
     <string name="year_text">Ano</string>
     <string name="genre_text">Genero</string>
 
+    <!--    Atm Consultancy-->
     <string name="atm_consultancy">ATM Consultoria</string>
     <string name="nav_header_atm_subtitle">atendimento@atmconsultoria.com.br</string>
     <string name="main">Principal</string>
@@ -74,6 +83,20 @@
     <string name="open_email_fab_description">Open email</string>
     <string name="share">Compartilhar</string>
 
+    <!--    Beer Values-->
+    <string name="beer_values">Valores de Cervejas</string>
+    <string name="firstUnitPriceTextInput">Preço Unitario</string>
+    <string name="secondUnitPriceTextInput">Preço Unitario</string>
+    <string name="radio_button_250">250 ML</string>
+    <string name="radio_button_350">350 ML</string>
+    <string name="radio_button_473">473 ML</string>
+    <string name="radio_button_600">600 ML</string>
+    <string name="equal_prices">Os preços são iguais</string>
+    <string name="enter_all_fields">Preencha todos os campos</string>
+    <string name="select_all_measures">Selecione as duas medidas</string>
+    <string name="better_buy_first">Melhor comprar o primeiro</string>
+    <string name="better_buy_second">Melhor comprar o segundo</string>
+    <string name="liter_price">O preço do litro é: R$ %1$s</string>
 
 </resources>
 

@@ -46,8 +46,7 @@ class AlcoholGasolineFragment : Fragment() {
             } else {
                 binding.resultTextView.text = getString(R.string.better_gasoline)
             }
-            binding.percentTextView.text =
-                getString(R.string.relation_price_info, division.toString())
+            binding.percentTextView.text = getString(R.string.relation_price_info, division.toString())
         } else {
             binding.resultTextView.text = getString(R.string.empty_field)
         }
