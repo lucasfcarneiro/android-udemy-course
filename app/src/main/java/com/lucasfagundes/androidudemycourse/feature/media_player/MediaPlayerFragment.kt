@@ -12,42 +12,48 @@ import com.lucasfagundes.androidudemycourse.databinding.FragmentMediaPlayerBindi
 class MediaPlayerFragment : Fragment() {
 
     private lateinit var binding: FragmentMediaPlayerBinding
-    private val media = MediaPlayer.create(context, R.raw.bach)
-    
+    private lateinit var mediaPlayer: MediaPlayer
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-
-        binding = FragmentMediaPlayerBinding.inflate(inflater,container,false)
-
+        binding = FragmentMediaPlayerBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.playButton.setOnClickListener(){
+        mediaPlayer = MediaPlayer.create(context, R.raw.teste)
+
+        binding.playButton.setOnClickListener() {
             playSound()
         }
-        binding.pauseButton.setOnClickListener(){
+        binding.pauseButton.setOnClickListener() {
             pauseSound()
         }
-        binding.stopButton.setOnClickListener(){
+        binding.stopButton.setOnClickListener() {
             stopSound()
         }
-    }
+    }//fun
 
     private fun playSound() {
-            media.start()
+        mediaPlayer.start()
     }
 
     private fun pauseSound() {
-
+        if (mediaPlayer.isPlaying) {
+            mediaPlayer.pause()
+        }
     }
 
     private fun stopSound() {
-
+        if (mediaPlayer.isPlaying) {
+            mediaPlayer.stop()
+            mediaPlayer = MediaPlayer.create(context, R.raw.teste)
+        }
     }
-
 }
+
+
