@@ -30,7 +30,7 @@ class MediaPlayerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mediaPlayer = MediaPlayer.create(context, R.raw.teste)
+        mediaPlayer = MediaPlayer.create(context, R.raw.vintage)
         initializeSeekBar()
 
         binding.playButton.setOnClickListener() {
@@ -63,9 +63,7 @@ class MediaPlayerFragment : Fragment() {
 
         binding.volumeSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-
                 audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, progress, 0)
-                binding.volumeNumberTextView.text = getString(R.string.percent, progress.toString())
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -90,7 +88,7 @@ class MediaPlayerFragment : Fragment() {
         if (mediaPlayer.isPlaying) {
             mediaPlayer.stop()
         }
-        mediaPlayer = MediaPlayer.create(context, R.raw.teste)
+        mediaPlayer = MediaPlayer.create(context, R.raw.vintage)
     }
 }
 
