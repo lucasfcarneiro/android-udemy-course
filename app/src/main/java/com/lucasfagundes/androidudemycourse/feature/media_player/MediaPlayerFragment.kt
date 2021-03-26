@@ -22,7 +22,6 @@ class MediaPlayerFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-
         binding = FragmentMediaPlayerBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -31,8 +30,11 @@ class MediaPlayerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         mediaPlayer = MediaPlayer.create(context, R.raw.vintage)
-        initializeSeekBar()
+        handleVolume()
+        handleButtonClick()
+    }
 
+    private fun handleButtonClick() {
         binding.playButton.setOnClickListener() {
             playSound()
         }
@@ -44,14 +46,7 @@ class MediaPlayerFragment : Fragment() {
         }
     }
 
-    override fun onStop() {
-        super.onStop()
-        if (mediaPlayer.isPlaying) {
-            mediaPlayer.stop()
-        }
-    }
-
-    private fun initializeSeekBar() {
+    private fun handleVolume() {
         audioManager =
             activity?.applicationContext?.getSystemService(Context.AUDIO_SERVICE) as AudioManager
 
@@ -89,6 +84,13 @@ class MediaPlayerFragment : Fragment() {
             mediaPlayer.stop()
         }
         mediaPlayer = MediaPlayer.create(context, R.raw.vintage)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        if (mediaPlayer.isPlaying) {
+            mediaPlayer.stop()
+        }
     }
 }
 
