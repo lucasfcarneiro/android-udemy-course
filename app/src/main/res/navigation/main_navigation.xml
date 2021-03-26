@@ -11,6 +11,11 @@
         android:label="@string/home"
         tools:layout="@layout/fragment_home" />
     <fragment
+        android:id="@+id/nav_media_player"
+        android:name="com.lucasfagundes.androidudemycourse.feature.media_player.MediaPlayerFragment"
+        android:label="@string/media_player"
+        tools:layout="@layout/fragment_media_player" />
+    <fragment
         android:id="@+id/nav_recycler_view"
         android:name="com.lucasfagundes.androidudemycourse.feature.recycler_view.RecyclerViewFragment"
         android:label="@string/recycler_view"
@@ -40,4 +45,5 @@
         android:name="com.lucasfagundes.androidudemycourse.feature.tip_calculator.TipCalculatorFragment"
         android:label="@string/tip_calculator"
         tools:layout="@layout/fragment_tip_calculator" />
+
 </navigation>

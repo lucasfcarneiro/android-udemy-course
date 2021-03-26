@@ -9,6 +9,10 @@
             android:icon="@drawable/ic_home"
             android:title="@string/home" />
         <item
+            android:id="@+id/nav_media_player"
+            android:icon="@drawable/ic_play"
+            android:title="@string/media_player" />
+        <item
             android:id="@+id/nav_atm_consultancy"
             android:icon="@drawable/ic_business"
             android:title="@string/atm_consultancy" />
