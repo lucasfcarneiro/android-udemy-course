@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setSupportActionBar(binding.appBarMain.toolbar)
+        setSupportActionBar(binding.appBarMain.MainToolbar)
 
         val navController = findNavController(R.id.nav_host_fragment)
 
@@ -53,15 +53,6 @@ class MainActivity : AppCompatActivity() {
             }
             binding.drawerLayout.closeDrawer(GravityCompat.START)
             true
-
-//            if (id == R.id.nav_atm_consultancy) {
-//                val intent = Intent(this, AtmConsultancyActivity::class.java)
-//                startActivity(intent)
-//            } else {
-//                NavigationUI.onNavDestinationSelected(menuItem, navController)
-//            }
-//            binding.drawerLayout.closeDrawer(GravityCompat.START)
-//            true
         }
     }
 

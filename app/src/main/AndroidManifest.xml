@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidUdemyCourse" >
-        <activity android:name=".feature.media_player.MediaPlayerActivity" >
-        </activity>
+
+        <activity android:name=".feature.media_player.MediaPlayerActivity"
+            android:theme="@style/Theme.AndroidUdemyCourse.NoActionBar"
+            android:label="@string/media_player"/>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
