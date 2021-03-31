@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setSupportActionBar(binding.appBarMain.MainToolbar)
+        setSupportActionBar(binding.appBarMain.mainToolbar)
 
         val navController = findNavController(R.id.nav_host_fragment)
 
