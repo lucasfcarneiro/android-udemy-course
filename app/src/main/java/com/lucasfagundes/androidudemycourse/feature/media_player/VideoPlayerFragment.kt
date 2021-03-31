@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.lucasfagundes.androidudemycourse.databinding.FragmentVideoBinding
 
-class VideoFragment : Fragment() {
+class VideoPlayerFragment : Fragment() {
 
     private lateinit var binding: FragmentVideoBinding
 

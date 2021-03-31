@@ -12,7 +12,7 @@ import android.widget.SeekBar
 import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.FragmentMusicBinding
 
-class MusicFragment : Fragment() {
+class MusicPlayerFragment : Fragment() {
 
     private lateinit var binding: FragmentMusicBinding
     private lateinit var mediaPlayer: MediaPlayer
