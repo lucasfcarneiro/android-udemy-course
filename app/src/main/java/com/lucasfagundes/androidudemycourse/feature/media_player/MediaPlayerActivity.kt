@@ -15,13 +15,10 @@ class MediaPlayerActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
-        val fragmentAdapter = PagerAdapter(supportFragmentManager)
-        binding.viewPager.adapter = fragmentAdapter
+        binding.viewPager.adapter = PagerAdapter(supportFragmentManager)
 
         binding.tabLayout.setupWithViewPager(binding.viewPager)
-
-    }//fun
-
+    }
 }
 
 

@@ -3,16 +3,19 @@ package com.lucasfagundes.androidudemycourse.feature.media_player
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.lucasfagundes.androidudemycourse.feature.media_player.fragments.MusicPlayerFragment
+import com.lucasfagundes.androidudemycourse.feature.media_player.fragments.VideoPlayerFragment
 
-class PagerAdapter(fm : FragmentManager): FragmentPagerAdapter(fm) {
+class PagerAdapter(fragmentManager: FragmentManager): FragmentPagerAdapter(fragmentManager,BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+
     override fun getCount(): Int {
         return 2
     }
 
     override fun getItem(position: Int): Fragment {
         return when (position){
-            0-> MusicFragment()
-            else-> VideoFragment()
+            0-> MusicPlayerFragment()
+            else-> VideoPlayerFragment()
         }
     }
 

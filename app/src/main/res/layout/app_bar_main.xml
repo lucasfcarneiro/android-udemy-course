@@ -12,7 +12,7 @@
         android:theme="@style/Theme.AndroidUdemyCourse.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/MainToolbar"
+            android:id="@+id/mainToolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"

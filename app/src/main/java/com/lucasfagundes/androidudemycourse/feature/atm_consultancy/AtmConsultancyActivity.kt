@@ -20,7 +20,7 @@ class AtmConsultancyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAtmConsultancyBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setSupportActionBar(binding.appBarMainAtm.toolbarAtm)
+        setSupportActionBar(binding.appBarMainAtm.atmToolbar)
 
         binding.appBarMainAtm.fab.setOnClickListener {
             sendMail()
