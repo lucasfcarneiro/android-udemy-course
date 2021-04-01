@@ -1,4 +1,4 @@
-package com.lucasfagundes.androidudemycourse.feature.media_player
+package com.lucasfagundes.androidudemycourse.feature.media_player.fragments
 
 import android.content.Context
 import android.media.AudioManager
@@ -10,11 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
 import com.lucasfagundes.androidudemycourse.R
-import com.lucasfagundes.androidudemycourse.databinding.FragmentMediaPlayerBinding
+import com.lucasfagundes.androidudemycourse.databinding.FragmentMusicPlayerBinding
 
-class MediaPlayerFragment : Fragment() {
+class MusicPlayerFragment : Fragment() {
 
-    private lateinit var binding: FragmentMediaPlayerBinding
+    private lateinit var binding: FragmentMusicPlayerBinding
     private lateinit var mediaPlayer: MediaPlayer
     private lateinit var audioManager: AudioManager
 
@@ -22,7 +22,7 @@ class MediaPlayerFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        binding = FragmentMediaPlayerBinding.inflate(inflater, container, false)
+        binding = FragmentMusicPlayerBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -93,5 +93,4 @@ class MediaPlayerFragment : Fragment() {
         }
     }
 }
-
 
