@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.lucasfagundes.androidudemycourse.databinding.FragmentVideoPlayerBinding
+import com.lucasfagundes.androidudemycourse.feature.media_player.PlayerActivity
 
 class VideoPlayerFragment : Fragment() {
 
@@ -14,9 +15,9 @@ class VideoPlayerFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
-        binding = FragmentVideoPlayerBinding.inflate(inflater,container,false)
+        binding = FragmentVideoPlayerBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -27,7 +28,8 @@ class VideoPlayerFragment : Fragment() {
             playVideo()
         }
     }
-    private fun playVideo(){
+
+    private fun playVideo() {
         val intent = Intent(activity, PlayerActivity::class.java)
         startActivity(intent)
     }

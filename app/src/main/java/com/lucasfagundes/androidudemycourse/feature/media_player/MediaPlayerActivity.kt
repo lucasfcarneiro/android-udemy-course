@@ -11,12 +11,11 @@ class MediaPlayerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMediaPlayerBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
+        setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
 
         binding.viewPager.adapter = PagerAdapter(supportFragmentManager)
-
         binding.tabLayout.setupWithViewPager(binding.viewPager)
     }
 }

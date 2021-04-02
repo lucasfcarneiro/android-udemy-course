@@ -40,11 +40,11 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.navView.setNavigationItemSelectedListener { menuItem ->
 
-            when (menuItem.itemId){
-                 R.id.nav_atm_consultancy -> {
-                     val intent = Intent(this, AtmConsultancyActivity::class.java)
-                     startActivity(intent)
-                 }
+            when (menuItem.itemId) {
+                R.id.nav_atm_consultancy -> {
+                    val intent = Intent(this, AtmConsultancyActivity::class.java)
+                    startActivity(intent)
+                }
                 R.id.nav_media_player -> {
                     val intent = Intent(this, MediaPlayerActivity::class.java)
                     startActivity(intent)

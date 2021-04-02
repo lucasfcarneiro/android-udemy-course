@@ -29,7 +29,7 @@ class MusicPlayerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mediaPlayer = MediaPlayer.create(context, R.raw.vintage)
+        mediaPlayer = MediaPlayer.create(context, R.raw.vintage_music)
         handleVolume()
         handleButtonClick()
     }
@@ -83,7 +83,7 @@ class MusicPlayerFragment : Fragment() {
         if (mediaPlayer.isPlaying) {
             mediaPlayer.stop()
         }
-        mediaPlayer = MediaPlayer.create(context, R.raw.vintage)
+        mediaPlayer = MediaPlayer.create(context, R.raw.vintage_music)
     }
 
     override fun onStop() {
