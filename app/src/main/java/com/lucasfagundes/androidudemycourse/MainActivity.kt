@@ -9,7 +9,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.*
 import com.lucasfagundes.androidudemycourse.databinding.ActivityMainBinding
 import com.lucasfagundes.androidudemycourse.feature.atm_consultancy.AtmConsultancyActivity
-import com.lucasfagundes.androidudemycourse.feature.media_player.MediaPlayerActivity
+import com.lucasfagundes.androidudemycourse.feature.media_player.activities.MediaPlayerActivity
 
 class MainActivity : AppCompatActivity() {
 

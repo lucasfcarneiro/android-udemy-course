@@ -9,14 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidUdemyCourse">
-        <activity
-            android:name=".feature.media_player.PlayerActivity"
-            android:screenOrientation="landscape"
-            android:theme="@style/Theme.AndroidUdemyCourse.NoActionBar" />
-        <activity
-            android:name=".feature.media_player.MediaPlayerActivity"
-            android:label="@string/media_player"
-            android:theme="@style/Theme.AndroidUdemyCourse.NoActionBar" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -27,10 +20,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".feature.atm_consultancy.AtmConsultancyActivity"
             android:label="@string/atm_consultancy"
             android:theme="@style/Theme.AtmConsultancy" />
+
+        <activity
+            android:name=".feature.media_player.activities.VideoPlayerActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AndroidUdemyCourse.NoActionBar" />
+
+        <activity
+            android:name=".feature.media_player.activities.MediaPlayerActivity"
+            android:label="@string/media_player"
+            android:theme="@style/Theme.AndroidUdemyCourse.NoActionBar" />
+
     </application>
 
 </manifest>

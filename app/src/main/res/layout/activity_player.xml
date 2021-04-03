@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".feature.media_player.PlayerActivity">
+    tools:context=".feature.media_player.activities.VideoPlayerActivity">
 
     <VideoView
         android:id="@+id/playerVideoView"

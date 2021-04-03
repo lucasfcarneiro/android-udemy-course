@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.lucasfagundes.androidudemycourse.databinding.FragmentVideoPlayerBinding
-import com.lucasfagundes.androidudemycourse.feature.media_player.PlayerActivity
+import com.lucasfagundes.androidudemycourse.feature.media_player.activities.VideoPlayerActivity
 
 class VideoPlayerFragment : Fragment() {
 
@@ -25,12 +25,12 @@ class VideoPlayerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.playImageView.setOnClickListener() {
-            playVideo()
+            navigateToVideoPlayerActivity()
         }
     }
 
-    private fun playVideo() {
-        val intent = Intent(activity, PlayerActivity::class.java)
+    private fun navigateToVideoPlayerActivity() {
+        val intent = Intent(activity, VideoPlayerActivity::class.java)
         startActivity(intent)
     }
 }

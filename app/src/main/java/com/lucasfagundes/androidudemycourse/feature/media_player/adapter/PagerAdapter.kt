@@ -1,4 +1,4 @@
-package com.lucasfagundes.androidudemycourse.feature.media_player
+package com.lucasfagundes.androidudemycourse.feature.media_player.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -21,7 +21,7 @@ class PagerAdapter(fragmentManager: FragmentManager): FragmentPagerAdapter(fragm
 
     override fun getPageTitle(position: Int): CharSequence {
         return when (position){
-            0-> "Music"
+            0-> "Musica"
             else-> "Video"
         }
     }
