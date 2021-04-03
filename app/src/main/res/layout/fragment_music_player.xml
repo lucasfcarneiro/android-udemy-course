@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/side_nav_bar"
-    tools:context=".feature.media_player.MediaPlayerFragment">
+    android:background="@drawable/side_nav_bar">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/volumeTextView"
@@ -38,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/play"
+        android:background="@drawable/play_music"
         app:layout_constraintEnd_toStartOf="@+id/pauseButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
