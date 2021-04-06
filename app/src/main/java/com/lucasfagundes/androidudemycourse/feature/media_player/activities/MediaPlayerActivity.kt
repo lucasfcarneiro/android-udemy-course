@@ -22,5 +22,3 @@ class MediaPlayerActivity : AppCompatActivity() {
         binding.viewPager.clearOnPageChangeListeners()
     }
 }
-
-
