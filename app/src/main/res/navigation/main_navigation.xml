@@ -40,10 +40,16 @@
         android:name="com.lucasfagundes.androidudemycourse.feature.tip_calculator.TipCalculatorFragment"
         android:label="@string/tip_calculator"
         tools:layout="@layout/fragment_tip_calculator" />
-    <activity
+    <fragment
         android:id="@+id/nav_learn_english"
-        android:name="com.lucasfagundes.androidudemycourse.feature.learn_english.LearnEnglishActivity"
+        android:name="com.lucasfagundes.androidudemycourse.feature.learn_english.LearnEnglishMainFragment"
         android:label="@string/learn_english"
-        tools:layout="@layout/activity_learn_english" />
+        tools:layout="@layout/fragment_learn_english_main" />
+    <!--    <activity-->
+<!--        android:id="@+id/nav_learn_english"-->
+<!--        android:name="com.lucasfagundes.androidudemycourse.feature.learn_english.LearnEnglishActivity"-->
+<!--        android:label="@string/learn_english"-->
+<!--        tools:layout="@layout/activity_learn_english" />-->
+
 
 </navigation>

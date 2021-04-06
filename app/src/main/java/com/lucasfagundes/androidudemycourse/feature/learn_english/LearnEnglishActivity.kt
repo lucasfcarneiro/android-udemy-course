@@ -2,9 +2,8 @@ package com.lucasfagundes.androidudemycourse.feature.learn_english
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.viewpager.widget.PagerAdapter
 import com.lucasfagundes.androidudemycourse.databinding.ActivityLearnEnglishBinding
-import com.lucasfagundes.androidudemycourse.feature.learn_english.adapter.PagerAdapter2
+import com.lucasfagundes.androidudemycourse.feature.learn_english.adapter.PagerAdapter
 
 class LearnEnglishActivity : AppCompatActivity() {
 
@@ -15,9 +14,9 @@ class LearnEnglishActivity : AppCompatActivity() {
         binding = ActivityLearnEnglishBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
-        setSupportActionBar(binding.toolbar1)
+        setSupportActionBar(binding.toolbarLearnEnglish)
 
-        binding.viewPager.adapter = PagerAdapter2(supportFragmentManager)
+        binding.viewPager.adapter = PagerAdapter(supportFragmentManager)
         binding.tabLayout.setupWithViewPager(binding.viewPager)
 
         binding.viewPager.clearOnPageChangeListeners()
