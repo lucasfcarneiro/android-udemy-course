@@ -7,7 +7,7 @@ import com.lucasfagundes.androidudemycourse.feature.learn_english.fragments.Anim
 import com.lucasfagundes.androidudemycourse.feature.learn_english.fragments.NumbersFragment
 import com.lucasfagundes.androidudemycourse.feature.learn_english.fragments.VowelsFragment
 
-class PagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager,
+class LearnEnglishPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager,
     BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
     override fun getCount(): Int {

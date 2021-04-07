@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.ActivityLearnEnglishBinding
-import com.lucasfagundes.androidudemycourse.feature.learn_english.adapter.PagerAdapter
+import com.lucasfagundes.androidudemycourse.feature.learn_english.adapter.LearnEnglishPagerAdapter
 
 class LearnEnglishActivity : AppCompatActivity() {
 
@@ -20,7 +20,7 @@ class LearnEnglishActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.toolbarLearnEnglish)
 
-        binding.viewPager.adapter = PagerAdapter(supportFragmentManager)
+        binding.viewPager.adapter = LearnEnglishPagerAdapter(supportFragmentManager)
         binding.tabLayout.setupWithViewPager(binding.viewPager)
 
         binding.viewPager.clearOnPageChangeListeners()
@@ -36,7 +36,5 @@ class LearnEnglishActivity : AppCompatActivity() {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
 
             window.statusBarColor = ContextCompat.getColor(this, R.color.brown)
-
     }
-
 }
