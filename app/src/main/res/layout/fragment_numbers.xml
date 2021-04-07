@@ -1,14 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/segundo_fundo"
     tools:context=".feature.learn_english.fragments.NumbersFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/catImageView"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        app:layout_constraintBottom_toTopOf="@id/monkeyImageView"
+        app:layout_constraintEnd_toStartOf="@id/dogImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/um" />
 
-</FrameLayout>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/dogImageView"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        app:layout_constraintBottom_toTopOf="@id/lionImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/catImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dois" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/monkeyImageView"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        app:layout_constraintBottom_toTopOf="@id/cowImageView"
+        app:layout_constraintEnd_toStartOf="@id/lionImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/catImageView"
+        app:srcCompat="@drawable/tres" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/lionImageView"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        app:layout_constraintBottom_toTopOf="@id/sheepImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/monkeyImageView"
+        app:layout_constraintTop_toBottomOf="@+id/dogImageView"
+        app:srcCompat="@drawable/quatro" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cowImageView"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/sheepImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/monkeyImageView"
+        app:srcCompat="@drawable/cinco" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/sheepImageView"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cowImageView"
+        app:layout_constraintTop_toBottomOf="@+id/lionImageView"
+        app:srcCompat="@drawable/seis" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,5 +18,4 @@ class NumbersFragment : Fragment() {
         binding = FragmentNumbersBinding.inflate(inflater, container, false)
         return binding.root
     }
-
 }

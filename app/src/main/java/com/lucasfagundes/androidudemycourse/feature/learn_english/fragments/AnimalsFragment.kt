@@ -18,5 +18,4 @@ class AnimalsFragment : Fragment() {
         binding = FragmentAnimalsBinding.inflate(inflater, container, false)
         return binding.root
     }
-
 }

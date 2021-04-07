@@ -14,7 +14,7 @@
             android:id="@+id/toolbarLearnEnglish"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/purple_500"
+            android:background="@color/light_brown"
             app:layout_scrollFlags="enterAlways"
             app:popupTheme="@style/Theme.AppCompat.Light"
             app:titleTextColor="@color/white" />
@@ -23,7 +23,7 @@
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/purple_500"
+            android:background="@color/light_brown"
             app:tabGravity="fill"
             app:tabIndicatorColor="@color/white"
             app:tabMaxWidth="0dp"
