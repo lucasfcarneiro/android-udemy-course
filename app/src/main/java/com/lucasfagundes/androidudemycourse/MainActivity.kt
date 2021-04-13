@@ -20,23 +20,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setSupportActionBar(binding.appBarMain.mainToolbar)
 
         val navController = findNavController(R.id.nav_host_fragment)
-
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.nav_home,
-                R.id.nav_learn_english,
-                R.id.nav_media_player,
-                R.id.nav_atm_consultancy,
-                R.id.nav_recycler_view,
-                R.id.nav_tip_calculator,
-                R.id.nav_alcohol_gasoline,
-                R.id.nav_rock_paper_scissors,
-                R.id.nav_random_number
-            ), binding.drawerLayout
-        )
+        setSupportActionBar(binding.appBarMain.mainToolbar)
+        appBarConfiguration = AppBarConfiguration(setOf(R.id.nav_home), binding.drawerLayout)
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.navView.setNavigationItemSelectedListener { menuItem ->
