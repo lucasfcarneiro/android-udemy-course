@@ -15,11 +15,15 @@ class MediaPlayerActivity : AppCompatActivity() {
 
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.viewPager.adapter = PagerAdapter(supportFragmentManager)
         binding.tabLayout.setupWithViewPager(binding.viewPager)
-
         binding.viewPager.clearOnPageChangeListeners()
+
+        binding.toolbar.setNavigationOnClickListener {
+            finish()
+        }
     }
 }
 

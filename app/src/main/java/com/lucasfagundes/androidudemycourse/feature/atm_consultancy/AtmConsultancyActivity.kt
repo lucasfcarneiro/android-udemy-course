@@ -3,7 +3,6 @@ package com.lucasfagundes.androidudemycourse.feature.atm_consultancy
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.navigation.findNavController
