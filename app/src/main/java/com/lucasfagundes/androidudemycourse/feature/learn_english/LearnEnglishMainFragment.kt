@@ -25,7 +25,7 @@ class LearnEnglishMainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
         binding.toolbarLearnEnglish.title = getString(R.string.learn_english)
 
         binding.viewPager.adapter = LearnEnglishPagerAdapter(childFragmentManager)
@@ -33,5 +33,10 @@ class LearnEnglishMainFragment : Fragment() {
         binding.viewPager.clearOnPageChangeListeners()
 
         changeStatusBarColor(R.color.brown)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        (requireActivity() as AppCompatActivity).supportActionBar?.show()
     }
 }

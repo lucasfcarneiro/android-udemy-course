@@ -97,14 +97,19 @@
     <string name="better_buy_first">Melhor comprar o primeiro</string>
     <string name="better_buy_second">Melhor comprar o segundo</string>
     <string name="liter_price">O preço do litro é: R$ %1$s</string>
+
     <!--    Media Player-->
     <string name="media_player">Media Player</string>
     <string name="volume">Volume</string>
     <string name="rick_and_morty">Rick and Morty</string>
     <string name="video_subtitle">2018 1 Temporada</string>
     <string name="video_synopsis">Acompanhe malucas viagens no tempo-espaço e por universos paralelos com Rick, um cientista com problemas com a bebida, e seu neto Morty, um adolescente não tão brilhante quanto o avô.</string>
+
+<!--    Learn English-->
     <string name="learn_english">Aprenda Ingles</string>
-    <string name="sadasd">asdasd</string>
+    <string name="animals">Animais</string>
+    <string name="numbers">Numeros</string>
+    <string name="vowels">Vogais</string>
 
 </resources>
 

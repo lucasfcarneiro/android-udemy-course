@@ -17,5 +17,4 @@ class VowelsFragment : Fragment() {
         binding = FragmentVowelsBinding.inflate(inflater, container, false)
         return binding.root
     }
-
 }

@@ -31,11 +31,6 @@
             android:name=".feature.media_player.activities.MediaPlayerActivity"
             android:label="@string/media_player"
             android:theme="@style/Theme.AndroidUdemyCourse.NoActionBar" />
-        <activity
-            android:name=".feature.learn_english.LearnEnglishActivity"
-            android:theme="@style/Theme.AndroidUdemyCourse.NoActionBar"
-            android:label="@string/learn_english"
-            />
 
     </application>
 

@@ -8,63 +8,63 @@
     tools:context=".feature.learn_english.fragments.AnimalsFragment">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/catImageView"
+        android:id="@+id/oneImageView"
         android:layout_width="125dp"
         android:layout_height="125dp"
-        app:layout_constraintBottom_toTopOf="@id/monkeyImageView"
-        app:layout_constraintEnd_toStartOf="@id/dogImageView"
+        app:layout_constraintBottom_toTopOf="@id/threeImageView"
+        app:layout_constraintEnd_toStartOf="@id/twoImageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/gato" />
+        app:srcCompat="@drawable/cat" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/dogImageView"
+        android:id="@+id/twoImageView"
         android:layout_width="125dp"
         android:layout_height="125dp"
-        app:layout_constraintBottom_toTopOf="@id/lionImageView"
+        app:layout_constraintBottom_toTopOf="@id/fourImageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/catImageView"
+        app:layout_constraintStart_toEndOf="@+id/oneImageView"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cao" />
+        app:srcCompat="@drawable/dog" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/lionImageView"
+        android:id="@+id/fourImageView"
         android:layout_width="125dp"
         android:layout_height="125dp"
-        app:layout_constraintBottom_toTopOf="@id/sheepImageView"
+        app:layout_constraintBottom_toTopOf="@id/sixImageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/monkeyImageView"
-        app:layout_constraintTop_toBottomOf="@+id/dogImageView"
-        app:srcCompat="@drawable/leao" />
+        app:layout_constraintStart_toEndOf="@+id/threeImageView"
+        app:layout_constraintTop_toBottomOf="@+id/twoImageView"
+        app:srcCompat="@drawable/lion" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/monkeyImageView"
+        android:id="@+id/threeImageView"
         android:layout_width="125dp"
         android:layout_height="125dp"
-        app:layout_constraintBottom_toTopOf="@id/cowImageView"
-        app:layout_constraintEnd_toStartOf="@id/lionImageView"
+        app:layout_constraintBottom_toTopOf="@id/fiveImageView"
+        app:layout_constraintEnd_toStartOf="@id/fourImageView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/catImageView"
-        app:srcCompat="@drawable/macaco" />
+        app:layout_constraintTop_toBottomOf="@id/oneImageView"
+        app:srcCompat="@drawable/monkey" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/sheepImageView"
+        android:id="@+id/sixImageView"
         android:layout_width="125dp"
         android:layout_height="125dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cowImageView"
-        app:layout_constraintTop_toBottomOf="@+id/lionImageView"
-        app:srcCompat="@drawable/ovelha" />
+        app:layout_constraintStart_toEndOf="@+id/fiveImageView"
+        app:layout_constraintTop_toBottomOf="@+id/fourImageView"
+        app:srcCompat="@drawable/sheep" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/cowImageView"
+        android:id="@+id/fiveImageView"
         android:layout_width="125dp"
         android:layout_height="125dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/sheepImageView"
+        app:layout_constraintEnd_toStartOf="@id/sixImageView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/monkeyImageView"
-        app:srcCompat="@drawable/vaca" />
+        app:layout_constraintTop_toBottomOf="@id/threeImageView"
+        app:srcCompat="" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
