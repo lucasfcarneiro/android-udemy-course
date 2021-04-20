@@ -65,6 +65,6 @@
         app:layout_constraintEnd_toStartOf="@id/sixImageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/threeImageView"
-        app:srcCompat="" />
+        app:srcCompat="@drawable/cow" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

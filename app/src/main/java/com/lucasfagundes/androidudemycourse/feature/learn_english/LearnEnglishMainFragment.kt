@@ -38,5 +38,6 @@ class LearnEnglishMainFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         (requireActivity() as AppCompatActivity).supportActionBar?.show()
+        changeStatusBarColor(R.color.purple_700)
     }
 }
