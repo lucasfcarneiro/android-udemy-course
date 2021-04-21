@@ -9,7 +9,6 @@ import com.lucasfagundes.androidudemycourse.databinding.FragmentLearnEnglishMain
 import com.lucasfagundes.androidudemycourse.feature.learn_english.adapter.LearnEnglishPagerAdapter
 import com.lucasfagundes.androidudemycourse.utils.changeStatusBarColor
 
-
 class LearnEnglishMainFragment : Fragment() {
 
     private lateinit var binding: FragmentLearnEnglishMainBinding
@@ -28,15 +27,24 @@ class LearnEnglishMainFragment : Fragment() {
         (requireActivity() as AppCompatActivity).supportActionBar?.hide()
         binding.toolbarLearnEnglish.title = getString(R.string.learn_english)
 
-        binding.viewPager.adapter = LearnEnglishPagerAdapter(childFragmentManager)
+        setBackArrowIntoFragment()
+
+        binding.viewPager.adapter = LearnEnglishPagerAdapter(childFragmentManager, this)
         binding.tabLayout.setupWithViewPager(binding.viewPager)
         binding.viewPager.clearOnPageChangeListeners()
 
         changeStatusBarColor(R.color.brown)
     }
 
+    private fun setBackArrowIntoFragment() {
+        val toolbar: androidx.appcompat.widget.Toolbar = binding.toolbarLearnEnglish
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
+        toolbar.setNavigationOnClickListener { requireActivity().onBackPressed() }
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         (requireActivity() as AppCompatActivity).supportActionBar?.show()
+        changeStatusBarColor(R.color.purple_700)
     }
 }
