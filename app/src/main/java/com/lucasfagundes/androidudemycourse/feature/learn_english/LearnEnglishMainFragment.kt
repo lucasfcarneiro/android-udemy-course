@@ -24,10 +24,7 @@ class LearnEnglishMainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
-        binding.toolbarLearnEnglish.title = getString(R.string.learn_english)
-
-        setBackArrowIntoFragment()
+        setupToolbar()
 
         binding.viewPager.adapter = LearnEnglishPagerAdapter(childFragmentManager, this)
         binding.tabLayout.setupWithViewPager(binding.viewPager)
@@ -36,10 +33,11 @@ class LearnEnglishMainFragment : Fragment() {
         changeStatusBarColor(R.color.brown)
     }
 
-    private fun setBackArrowIntoFragment() {
-        val toolbar: androidx.appcompat.widget.Toolbar = binding.toolbarLearnEnglish
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
-        toolbar.setNavigationOnClickListener { requireActivity().onBackPressed() }
+    private fun setupToolbar() {
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
+        binding.toolbarLearnEnglish.title = getString(R.string.learn_english)
+        binding.toolbarLearnEnglish.setNavigationIcon(R.drawable.ic_arrow_back)
+        binding.toolbarLearnEnglish.setNavigationOnClickListener { requireActivity().onBackPressed() }
     }
 
     override fun onDestroy() {

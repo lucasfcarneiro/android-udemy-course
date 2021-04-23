@@ -36,8 +36,7 @@ class NumbersFragment : Fragment(), View.OnClickListener {
         binding.fiveImageView.setOnClickListener(this)
         binding.sixImageView.setOnClickListener(this)
     }
-
-
+    
     override fun onClick(view: View) {
         when (view.id) {
             R.id.oneImageView -> {
