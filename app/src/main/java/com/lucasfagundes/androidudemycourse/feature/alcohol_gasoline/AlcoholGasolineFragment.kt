@@ -28,7 +28,6 @@ class AlcoholGasolineFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.calcButton.setOnClickListener {
             getPrices()
-            hideKeyboard()
         }
         binding.cleaTextView.setOnClickListener { cleanFields() }
     }

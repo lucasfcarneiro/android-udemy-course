@@ -17,7 +17,7 @@ class AboutAtmFragment : Fragment() {
         return AboutPage(context)
             .isRTL(false)
             .enableDarkMode(false)
-            .setImage(R.drawable.logoatm)
+            .setImage(R.drawable.logo_atm)
             .addEmail("contact.lucascarneiro@gmail.com")
             .addGitHub("lucasfcarneiro")
             .create()

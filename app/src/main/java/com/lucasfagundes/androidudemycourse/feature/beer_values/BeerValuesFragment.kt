@@ -9,7 +9,8 @@ import android.widget.RadioGroup
 import android.widget.Toast
 import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.FragmentBeerValuesBinding
-import com.lucasfagundes.androidudemycourse.feature.beer_values.utils.toPrice
+import com.lucasfagundes.androidudemycourse.utils.hideKeyboard
+import com.lucasfagundes.androidudemycourse.utils.toPrice
 
 class BeerValuesFragment : Fragment() {
 
@@ -103,6 +104,7 @@ class BeerValuesFragment : Fragment() {
                     setMlValue(radioGroup, 600.0)
                 }
             }
+            hideKeyboard()
         }
     }
 
