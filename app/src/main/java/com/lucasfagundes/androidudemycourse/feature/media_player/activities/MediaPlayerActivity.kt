@@ -3,7 +3,7 @@ package com.lucasfagundes.androidudemycourse.feature.media_player.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.lucasfagundes.androidudemycourse.databinding.ActivityMediaPlayerBinding
-import com.lucasfagundes.androidudemycourse.feature.media_player.adapter.PagerAdapter
+import com.lucasfagundes.androidudemycourse.feature.media_player.adapter.MediaPlayerPagerAdapter
 
 class MediaPlayerActivity : AppCompatActivity() {
 
@@ -17,7 +17,7 @@ class MediaPlayerActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbarMediaPlayer)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        binding.viewPager.adapter = PagerAdapter(supportFragmentManager)
+        binding.viewPager.adapter = MediaPlayerPagerAdapter(supportFragmentManager,this)
         binding.tabLayout.setupWithViewPager(binding.viewPager)
         binding.viewPager.clearOnPageChangeListeners()
 
