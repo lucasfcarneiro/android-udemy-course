@@ -101,6 +101,8 @@
     <!--    Media Player-->
     <string name="media_player">Media Player</string>
     <string name="volume">Volume</string>
+    <string name="music">Musica</string>
+    <string name="video">Video</string>
     <string name="rick_and_morty">Rick and Morty</string>
     <string name="video_subtitle">2018 1 Temporada</string>
     <string name="video_synopsis">Acompanhe malucas viagens no tempo-espaço e por universos paralelos com Rick, um cientista com problemas com a bebida, e seu neto Morty, um adolescente não tão brilhante quanto o avô.</string>
