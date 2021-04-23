@@ -1,4 +1,4 @@
-package com.lucasfagundes.androidudemycourse.feature.beer_values.utils
+package com.lucasfagundes.androidudemycourse.utils
 
 import android.widget.EditText
 

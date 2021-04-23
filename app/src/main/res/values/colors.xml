@@ -18,4 +18,7 @@
     <color name="purple_atm_2">#C63FF8</color>
     <color name="purple_atm_3">#CC07F8</color>
     <color name="gray">#454545</color>
+    <color name="light_yellow">#F7EAC3</color>
+    <color name="brown">#91643D</color>
+    <color name="light_brown">#9F7554</color>
 </resources>
