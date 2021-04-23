@@ -15,6 +15,7 @@ class MediaPlayerActivity : AppCompatActivity() {
 
         setContentView(binding.root)
         setSupportActionBar(binding.toolbarMediaPlayer)
+
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.viewPager.adapter = MediaPlayerPagerAdapter(supportFragmentManager,this)
