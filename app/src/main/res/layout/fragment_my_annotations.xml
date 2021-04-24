@@ -51,6 +51,7 @@
         app:tint="@color/light_yellow" />
 
     <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputAnnotations"
         style="@style/TextInputLayoutAppearance"
         android:layout_width="match_parent"
         android:layout_height="0dp"
