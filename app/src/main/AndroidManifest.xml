@@ -26,7 +26,8 @@
         <activity
             android:name=".feature.media_player.activities.VideoPlayerActivity"
             android:screenOrientation="landscape"
-            android:theme="@style/Theme.AndroidUdemyCourse.NoActionBar" />
+            android:theme="@style/Theme.Design.NoActionBar"
+            />
         <activity
             android:name=".feature.media_player.activities.MediaPlayerActivity"
             android:label="@string/media_player"
