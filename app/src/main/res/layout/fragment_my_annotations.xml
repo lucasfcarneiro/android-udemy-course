@@ -7,30 +7,84 @@
     android:background="@color/light_yellow"
     tools:context=".feature.my_annotations.MyAnnotationsFragment">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/backgroundImageView"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:backgroundTint="@color/dark_brown"
-        android:gravity="center"
+        android:background="@color/dark_brown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imageView"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/logo_my_annotations" />
-    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/logoAnnotationImageView"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_my_annotations" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/testeseta"
+        android:layout_width="24dp"
+        android:layout_margin="16dp"
+        android:layout_height="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back" />
+
+
+
+
+    <!--    <com.google.android.material.appbar.AppBarLayout-->
+    <!--        android:id="@+id/appBarLayoutAnnotations"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:backgroundTint="@color/dark_brown"-->
+    <!--        android:gravity="center"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--        <androidx.appcompat.widget.Toolbar-->
+    <!--            android:id="@+id/toolbarMyAnnotation"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="?attr/actionBarSize"-->
+    <!--            android:background="@color/dark_brown"-->
+    <!--            app:layout_scrollFlags="enterAlways"-->
+    <!--            app:popupTheme="@style/Theme.AppCompat.Light"-->
+    <!--            app:titleTextColor="@color/white" />-->
+
+    <!--        <androidx.appcompat.widget.AppCompatImageView-->
+    <!--            android:id="@+id/logoMyAnnotation"-->
+    <!--            android:layout_width="200dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:src="@drawable/logo_my_annotations" />-->
+
+    <!--    </com.google.android.material.appbar.AppBarLayout>-->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_margin="16dp"
+        android:backgroundTint="@color/colorLightOrange"
+        android:contentDescription="@string/my_annotations"
         app:fabCustomSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_beer" />
+        app:rippleColor="@color/pink_500"
+        app:srcCompat="@drawable/ic_check" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backgroundImageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
