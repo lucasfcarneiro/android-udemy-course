@@ -27,21 +27,18 @@ class MyAnnotationsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.floatButton.setOnClickListener {
-            Snackbar.make(it, "Modificações salvas", Snackbar.LENGTH_LONG).setAction("Action", null)
+            Snackbar.make(it, R.string.modification_saved, Snackbar.LENGTH_LONG)
+                .setAction("Action", null)
                 .show()
         }
 
         changeStatusBarColor(R.color.black)
-
         (requireActivity() as AppCompatActivity).supportActionBar?.hide()
 
-        binding.testeseta.setOnClickListener {
+        binding.arrowBackMyAnnotations.setOnClickListener {
+            requireActivity().onBackPressed()
         }
 
-//        binding.toolbarMyAnnotation.setNavigationIcon(R.drawable.ic_arrow_back)
-//        binding.toolbarMyAnnotation.setNavigationOnClickListener {
-//            requireActivity().onBackPressed()
-//        }
     }
 
     override fun onDestroy() {

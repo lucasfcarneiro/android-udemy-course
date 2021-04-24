@@ -41,4 +41,8 @@
     <style name="ToolbarColoredBackArrow" parent="Theme.AndroidUdemyCourse">
         <item name="android:textColorSecondary">@color/white</item>
     </style>
+
+    <style name="TextInputLayoutAppearance" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    </style>
+
 </resources>
