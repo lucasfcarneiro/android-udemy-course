@@ -25,7 +25,13 @@ class VideoPlayerActivity : AppCompatActivity() {
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
 
         val videoView = binding.playerVideoView
-        val mediaController = MediaController(this)
+
+        val mediaController = object : MediaController(this) {
+            override fun hide(){ 
+                super.hide()
+                window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+            }
+        }
 
         mediaController.setAnchorView(videoView)
         handleVideoView(videoView, mediaController)
