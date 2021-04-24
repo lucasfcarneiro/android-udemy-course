@@ -45,5 +45,10 @@
         android:name="com.lucasfagundes.androidudemycourse.feature.learn_english.LearnEnglishMainFragment"
         android:label="@string/learn_english"
         tools:layout="@layout/fragment_learn_english_main" />
+    <fragment
+        android:id="@+id/nav_my_annotations"
+        android:name="com.lucasfagundes.androidudemycourse.feature.my_annotations.MyAnnotationsFragment"
+        android:label="@string/my_annotations"
+        tools:layout="@layout/fragment_my_annotations" />
 
 </navigation>
