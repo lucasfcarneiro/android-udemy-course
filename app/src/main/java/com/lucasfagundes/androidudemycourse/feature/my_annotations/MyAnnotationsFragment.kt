@@ -2,7 +2,6 @@ package com.lucasfagundes.androidudemycourse.feature.my_annotations
 
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.preference.PreferenceDataStore
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -32,7 +31,8 @@ class MyAnnotationsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        changeStatusBarColor(R.color.black)
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
 
         binding.floatButton.setOnClickListener {
             Snackbar.make(it, R.string.modification_saved, Snackbar.LENGTH_LONG)
@@ -41,27 +41,40 @@ class MyAnnotationsFragment : Fragment() {
             validateField()
         }
 
-        changeStatusBarColor(R.color.black)
-        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
-
         binding.arrowBackMyAnnotations.setOnClickListener {
             requireActivity().onBackPressed()
         }
 
+        sharedPreferences = requireActivity().getSharedPreferences(FILE_PREFERENCE, 0)
+        setupPreference()
     }
 
     private fun validateField() {
-        if(binding.textInputAnnotations.text.isNullOrEmpty()){
+        if (binding.textInputAnnotations.text.isNullOrEmpty()) {
             Toast.makeText(activity, "escreve um nome ai sô", Toast.LENGTH_SHORT).show()
-        }else{
+        } else {
             saveInSharedPreference()
+        }
+    }
+
+    private fun setupPreference() {
+        if (sharedPreferences.contains("note")) {
+            val noteGetFromPreference = sharedPreferences.getString("note", "Nota não encontrada")
+
+            if (noteGetFromPreference != null) {
+                binding.textInputAnnotations.setText(noteGetFromPreference)
+            }
         }
     }
 
     private fun saveInSharedPreference() {
         val note = binding.textInputAnnotations.text.toString()
 
-
+        sharedPreferences = requireActivity().getSharedPreferences(FILE_PREFERENCE, 0)
+        sharedPreferences.edit().apply() {
+            putString("note", note)
+            apply()
+        }
     }
 
     override fun onDestroy() {
@@ -69,6 +82,4 @@ class MyAnnotationsFragment : Fragment() {
         (requireActivity() as AppCompatActivity).supportActionBar?.show()
         changeStatusBarColor(R.color.purple_700)
     }
-
-
 }
