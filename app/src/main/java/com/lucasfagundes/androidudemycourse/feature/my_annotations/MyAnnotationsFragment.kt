@@ -50,7 +50,7 @@ class MyAnnotationsFragment : Fragment() {
     }
 
     private fun validateField() {
-        if (binding.textInputAnnotations.text.isNullOrEmpty()) {
+        if (binding.textInputNotes.text.isNullOrEmpty()) {
             Toast.makeText(activity, "escreve um nome ai sô", Toast.LENGTH_SHORT).show()
         } else {
             saveInSharedPreference()
@@ -62,13 +62,13 @@ class MyAnnotationsFragment : Fragment() {
             val noteGetFromPreference = sharedPreferences.getString("note", "Nota não encontrada")
 
             if (noteGetFromPreference != null) {
-                binding.textInputAnnotations.setText(noteGetFromPreference)
+                binding.textInputNotes.setText(noteGetFromPreference)
             }
         }
     }
 
     private fun saveInSharedPreference() {
-        val note = binding.textInputAnnotations.text.toString()
+        val note = binding.textInputNotes.text.toString()
 
         sharedPreferences = requireActivity().getSharedPreferences(FILE_PREFERENCE, 0)
         sharedPreferences.edit().apply() {

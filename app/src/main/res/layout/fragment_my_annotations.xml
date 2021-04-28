@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/light_yellow"
+    android:theme="@style/Theme.MyAnnotations"
     tools:context=".feature.my_annotations.MyAnnotationsFragment">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/backgroundImageView"
+    <View
+        android:id="@+id/headerView"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="@color/dark_brown"
@@ -20,10 +21,10 @@
         android:id="@+id/logoAnnotationImageView"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/backgroundImageView"
+        app:layout_constraintBottom_toBottomOf="@id/headerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/headerView"
         app:srcCompat="@drawable/logo_my_annotations" />
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -51,14 +52,14 @@
         app:tint="@color/light_yellow" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputAnnotations"
-        style="@style/TextInputLayoutAppearance"
+        android:id="@+id/textInputNotes"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:gravity="top"
+        android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintBottom_toTopOf="@id/floatButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backgroundImageView" />
+        app:layout_constraintTop_toBottomOf="@+id/headerView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
