@@ -38,7 +38,6 @@ class MyAnnotationsFragment : Fragment() {
         binding.arrowBackMyAnnotations.setOnClickListener {
             requireActivity().onBackPressed()
         }
-
     }
 
     override fun onDestroy() {

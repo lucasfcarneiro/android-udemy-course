@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/light_yellow"
+    android:theme="@style/Theme.MyAnnotations"
     tools:context=".feature.my_annotations.MyAnnotationsFragment">
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -51,10 +52,10 @@
         app:tint="@color/light_yellow" />
 
     <com.google.android.material.textfield.TextInputEditText
-        style="@style/TextInputLayoutAppearance"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:gravity="top"
+        android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintBottom_toTopOf="@id/floatButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
