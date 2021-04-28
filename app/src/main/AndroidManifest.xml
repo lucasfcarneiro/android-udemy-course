@@ -32,7 +32,5 @@
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AndroidUdemyCourse.NoActionBar" />
 
-
     </application>
-
 </manifest>
