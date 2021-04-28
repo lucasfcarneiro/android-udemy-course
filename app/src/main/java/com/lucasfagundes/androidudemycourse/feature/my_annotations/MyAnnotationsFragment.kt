@@ -11,9 +11,10 @@ import com.google.android.material.snackbar.Snackbar
 import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.FragmentMyAnnotationsBinding
 import com.lucasfagundes.androidudemycourse.utils.changeStatusBarColor
-import android.widget.Toast as Toast
+import com.lucasfagundes.androidudemycourse.utils.snackBar
 
 const val FILE_PREFERENCE = "filePreference"
+const val NOTE_KEY = "note"
 
 class MyAnnotationsFragment : Fragment() {
 
@@ -35,9 +36,6 @@ class MyAnnotationsFragment : Fragment() {
         (requireActivity() as AppCompatActivity).supportActionBar?.hide()
 
         binding.floatButton.setOnClickListener {
-            Snackbar.make(it, R.string.modification_saved, Snackbar.LENGTH_LONG)
-                .setAction("Action", null)
-                .show()
             validateField()
         }
 
@@ -45,24 +43,26 @@ class MyAnnotationsFragment : Fragment() {
             requireActivity().onBackPressed()
         }
 
-        sharedPreferences = requireActivity().getSharedPreferences(FILE_PREFERENCE, 0)
-        setupPreference()
+        getNoteFromSharedPreference()
     }
 
     private fun validateField() {
         if (binding.textInputNotes.text.isNullOrEmpty()) {
-            Toast.makeText(activity, "escreve um nome ai sô", Toast.LENGTH_SHORT).show()
+            snackBar(requireView(), R.string.empty_field, Snackbar.LENGTH_LONG )
         } else {
             saveInSharedPreference()
+            snackBar(requireView(), R.string.modification_saved, Snackbar.LENGTH_LONG)
         }
     }
 
-    private fun setupPreference() {
-        if (sharedPreferences.contains("note")) {
-            val noteGetFromPreference = sharedPreferences.getString("note", "Nota não encontrada")
+    private fun getNoteFromSharedPreference() {
+        sharedPreferences = requireActivity().getSharedPreferences(FILE_PREFERENCE, 0)
 
-            if (noteGetFromPreference != null) {
-                binding.textInputNotes.setText(noteGetFromPreference)
+        if (sharedPreferences.contains(NOTE_KEY)) {
+            val recoveredNote = sharedPreferences.getString(NOTE_KEY, getString(R.string.note_not_found))
+
+            if (recoveredNote != null) {
+                binding.textInputNotes.setText(recoveredNote)
             }
         }
     }
@@ -72,7 +72,7 @@ class MyAnnotationsFragment : Fragment() {
 
         sharedPreferences = requireActivity().getSharedPreferences(FILE_PREFERENCE, 0)
         sharedPreferences.edit().apply() {
-            putString("note", note)
+            putString(NOTE_KEY, note)
             apply()
         }
     }
