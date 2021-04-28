@@ -9,6 +9,10 @@
             android:icon="@drawable/ic_home"
             android:title="@string/home" />
         <item
+            android:id="@+id/nav_my_annotations"
+            android:icon="@drawable/ic_note"
+            android:title="@string/my_annotations" />
+        <item
             android:id="@+id/nav_learn_english"
             android:icon="@drawable/ic_english"
             android:title="@string/learn_english" />
@@ -44,5 +48,6 @@
             android:id="@+id/nav_random_number"
             android:icon="@drawable/ic_random_number"
             android:title="@string/random_number" />
+
     </group>
 </menu>

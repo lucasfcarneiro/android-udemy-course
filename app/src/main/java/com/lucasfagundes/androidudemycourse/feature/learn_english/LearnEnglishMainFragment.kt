@@ -37,7 +37,9 @@ class LearnEnglishMainFragment : Fragment() {
         (requireActivity() as AppCompatActivity).supportActionBar?.hide()
         binding.toolbarLearnEnglish.title = getString(R.string.learn_english)
         binding.toolbarLearnEnglish.setNavigationIcon(R.drawable.ic_arrow_back)
-        binding.toolbarLearnEnglish.setNavigationOnClickListener { requireActivity().onBackPressed() }
+        binding.toolbarLearnEnglish.setNavigationOnClickListener {
+            requireActivity().onBackPressed()
+        }
     }
 
     override fun onDestroy() {
