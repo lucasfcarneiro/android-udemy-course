@@ -118,5 +118,10 @@
     <string name="modification_saved">Modificações salvas</string>
     <string name="note_not_found">Nota não encontrada</string>
 
+<!--    Task List-->
+    <string name="task_list">Lista de tarefas</string>
+    <string name="add_task">Adicione uma tarefa</string>
+    <string name="add_new_task">Add new task</string>
+
 </resources>
 

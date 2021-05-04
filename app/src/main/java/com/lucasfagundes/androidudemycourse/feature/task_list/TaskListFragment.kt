@@ -1,16 +1,14 @@
 package com.lucasfagundes.androidudemycourse.feature.task_list
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.FragmentTaskListBinding
 import com.lucasfagundes.androidudemycourse.utils.changeStatusBarColor
-
 
 class TaskListFragment : Fragment() {
 
@@ -29,10 +27,22 @@ class TaskListFragment : Fragment() {
 
         changeStatusBarColor(R.color.pink_700)
 
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
+
+
+
+
+
+        val taskListAddFragment = TaskListAddFragment()
+
         binding.taskListFloatButton.setOnClickListener{
-            val fm: FragmentManager = activity.supportFragmentManager
-            fm.beginTransaction().add(R.layout, OtherFragmentObject()).commit();
+            activity?.supportFragmentManager?.beginTransaction()?.apply {
+                replace(R.id.nav_host_fragment, taskListAddFragment)
+                addToBackStack(null)
+                commit()
+            }
         }
+
 
     }
 }

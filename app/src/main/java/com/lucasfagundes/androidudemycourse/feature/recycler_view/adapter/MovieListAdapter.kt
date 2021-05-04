@@ -5,8 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.lucasfagundes.androidudemycourse.databinding.MovieItemRecyclerViewBinding
 
-class MovieListAdapter(private val movieList: List<Movie>) :
-    RecyclerView.Adapter<MovieListAdapter.ViewHolder>() {
+class MovieListAdapter(private val movieList: List<Movie>) : RecyclerView.Adapter<MovieListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieListAdapter.ViewHolder {
         val binding =
