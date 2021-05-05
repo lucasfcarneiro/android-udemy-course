@@ -29,7 +29,7 @@ class TaskListFragment : Fragment() {
 
         (requireActivity() as AppCompatActivity).supportActionBar?.hide()
 
-
+        
 
 
 
