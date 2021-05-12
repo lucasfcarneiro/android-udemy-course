@@ -5,23 +5,24 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.lucasfagundes.androidudemycourse.databinding.TaskListItemRecyclerViewBinding
 
-class TaskListAdapter(private val teste : List<String>) :RecyclerView.Adapter<TaskListAdapter.ViewHolder>() {
+class TaskListAdapter(private val test: List<Task>) :
+    RecyclerView.Adapter<TaskListAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):  ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = TaskListItemRecyclerViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
+    override fun getItemCount(): Int = test.size
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(teste[position])
+        holder.bind(test[position])
     }
 
-    override fun getItemCount(): Int {
-
-    }
-
-    class ViewHolder(private val binding: TaskListItemRecyclerViewBinding) :
+    inner class ViewHolder(private val binding: TaskListItemRecyclerViewBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(s: String)
+        fun bind(s: Task) {
+            binding.taskTextView.text = s.title
+        }
     }
 }
