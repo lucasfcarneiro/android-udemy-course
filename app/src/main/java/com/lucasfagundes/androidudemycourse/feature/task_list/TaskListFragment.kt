@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.FragmentTaskListBinding
 import com.lucasfagundes.androidudemycourse.feature.task_list.adapter.Task
@@ -30,10 +33,12 @@ class TaskListFragment : Fragment() {
         setHasOptionsMenu(true)
         setupView()
 
-
         binding.taskListFloatButton.setOnClickListener {
-            
+            if (findNavController().currentDestination?.id == R.id.nav_host_fragment_container){
+                findNavController().navigate(TaskListFragmentDirections.actionTaskListFragmentToTaskListAddFragment())
+            }
         }
+
     }
 
 

@@ -37,6 +37,9 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(this, MediaPlayerActivity::class.java)
                     startActivity(intent)
                 }
+                R.id.nav_task_list -> {
+                    
+                }
                 else -> NavigationUI.onNavDestinationSelected(menuItem, navController)
             }
             binding.drawerLayout.closeDrawer(GravityCompat.START)
