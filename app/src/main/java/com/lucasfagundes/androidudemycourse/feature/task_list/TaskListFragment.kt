@@ -3,16 +3,13 @@ package com.lucasfagundes.androidudemycourse.feature.task_list
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.FragmentTaskListBinding
 import com.lucasfagundes.androidudemycourse.feature.task_list.adapter.Task
 import com.lucasfagundes.androidudemycourse.feature.task_list.adapter.TaskListAdapter
-import com.lucasfagundes.androidudemycourse.utils.setStatusBarColor
 import com.lucasfagundes.androidudemycourse.utils.setActionBarColor
+import com.lucasfagundes.androidudemycourse.utils.setStatusBarColor
 
 class TaskListFragment : Fragment() {
 
@@ -34,20 +31,14 @@ class TaskListFragment : Fragment() {
         setupView()
 
         binding.taskListFloatButton.setOnClickListener {
-            if (findNavController().currentDestination?.id == R.id.nav_host_fragment_container){
-                findNavController().navigate(TaskListFragmentDirections.actionTaskListFragmentToTaskListAddFragment())
-            }
+            findNavController().navigate(TaskListFragmentDirections.actionTaskListFragmentToTaskListAddFragment())
         }
-
     }
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
                 activity?.onBackPressed()
-                setStatusBarColor(R.color.purple_700)
-                setActionBarColor(R.color.purple_500)
                 true
             }
             else -> super.onOptionsItemSelected(item)
