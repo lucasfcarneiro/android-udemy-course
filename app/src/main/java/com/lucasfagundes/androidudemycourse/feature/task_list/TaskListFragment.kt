@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.FragmentTaskListBinding
-import com.lucasfagundes.androidudemycourse.feature.task_list.adapter.Task
 import com.lucasfagundes.androidudemycourse.feature.task_list.adapter.TaskListAdapter
 import com.lucasfagundes.androidudemycourse.utils.setActionBarColor
 import com.lucasfagundes.androidudemycourse.utils.setStatusBarColor
@@ -15,6 +14,7 @@ class TaskListFragment : Fragment() {
 
     private lateinit var binding: FragmentTaskListBinding
     private lateinit var taskListAdapter: TaskListAdapter
+    private lateinit var listOfTitle: List<String>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,6 +29,8 @@ class TaskListFragment : Fragment() {
 
         setHasOptionsMenu(true)
         setupView()
+
+        listOfTitle = listOf("Um Sonho de Liberdade","O Poderoso Chefão","O Poderoso Chefão II","O Poderoso Chefão III")
 
         binding.taskListFloatButton.setOnClickListener {
             findNavController().navigate(TaskListFragmentDirections.actionTaskListFragmentToTaskListAddFragment())
@@ -47,7 +49,7 @@ class TaskListFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        loadTaskList()
+        loadTaskList(listOfTitle)
     }
 
     private fun setupView() {
@@ -55,8 +57,8 @@ class TaskListFragment : Fragment() {
         setActionBarColor(R.color.pink_500)
     }
 
-    private fun loadTaskList() {
-        taskListAdapter = TaskListAdapter(Task.DUMBLIST)
-        binding.recyclerViewTaskList.adapter = taskListAdapter
+    private fun loadTaskList(listOfTitle: List<String>) {
+        taskListAdapter = TaskListAdapter(listOfTitle)
+        binding.taskListRecyclerView.adapter = taskListAdapter
     }
 }

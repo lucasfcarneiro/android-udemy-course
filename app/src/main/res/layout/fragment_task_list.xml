@@ -8,7 +8,7 @@
     tools:context=".feature.task_list.TaskListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewTaskList"
+        android:id="@+id/taskListRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="5dp"
