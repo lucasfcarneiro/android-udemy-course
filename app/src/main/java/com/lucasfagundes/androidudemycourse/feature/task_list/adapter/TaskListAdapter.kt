@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.lucasfagundes.androidudemycourse.databinding.TaskListItemRecyclerViewBinding
 
-class TaskListAdapter(private val test: List<Task>) :
+class TaskListAdapter(private val listOfTitle: List<Task>) :
     RecyclerView.Adapter<TaskListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -13,16 +13,16 @@ class TaskListAdapter(private val test: List<Task>) :
         return ViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = test.size
+    override fun getItemCount(): Int = listOfTitle.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(test[position])
+        holder.bind(listOfTitle[position])
     }
 
     inner class ViewHolder(private val binding: TaskListItemRecyclerViewBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(s: Task) {
-            binding.taskTextView.text = s.title
+        fun bind(listItem: Task) {
+            binding.taskTextView.text = listItem.title
         }
     }
 }

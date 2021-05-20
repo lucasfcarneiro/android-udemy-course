@@ -6,7 +6,7 @@
     android:theme="@style/Theme.TaskList">
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/taskInputText"
+        android:id="@+id/taskListAddInputText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
