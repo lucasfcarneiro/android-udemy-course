@@ -22,10 +22,3 @@ fun Fragment.setActionBarColor(color: Int){
 fun Fragment.setStatusBarColor(color: Int) {
     requireActivity().setStatusBarColor(color)
 }
-
-
-
-
-
-
-

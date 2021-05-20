@@ -56,7 +56,4 @@
         android:name="com.lucasfagundes.androidudemycourse.feature.task_list.TaskListMainFragment"
         android:label="@string/task_list"
         tools:layout="@layout/fragment_task_list_main" />
-
-
-
 </navigation>

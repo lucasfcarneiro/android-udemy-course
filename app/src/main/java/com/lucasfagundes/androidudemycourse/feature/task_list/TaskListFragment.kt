@@ -14,7 +14,6 @@ class TaskListFragment : Fragment() {
 
     private lateinit var binding: FragmentTaskListBinding
     private lateinit var taskListAdapter: TaskListAdapter
-    private lateinit var listOfTitle: List<String>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,8 +28,7 @@ class TaskListFragment : Fragment() {
 
         setHasOptionsMenu(true)
         setupView()
-
-        listOfTitle = listOf("Um Sonho de Liberdade","O Poderoso Chefão","O Poderoso Chefão II","O Poderoso Chefão III")
+        loadTaskList(listOf("Um Sonho de Liberdade","O Poderoso Chefão","O Poderoso Chefão II","O Poderoso Chefão III"))
 
         binding.taskListFloatButton.setOnClickListener {
             findNavController().navigate(TaskListFragmentDirections.actionTaskListFragmentToTaskListAddFragment())
@@ -47,11 +45,6 @@ class TaskListFragment : Fragment() {
             }
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        loadTaskList(listOfTitle)
     }
 
     private fun setupView() {
