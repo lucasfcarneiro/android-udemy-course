@@ -41,6 +41,8 @@ class TaskListFragment : Fragment() {
         return when (item.itemId) {
             android.R.id.home -> {
                 activity?.onBackPressed()
+                setStatusBarColor(R.color.purple_700)
+                setActionBarColor(R.color.purple_500)
                 true
             }
             else -> super.onOptionsItemSelected(item)
