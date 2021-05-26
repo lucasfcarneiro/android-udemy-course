@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/task_list_navigation"
+    app:startDestination="@id/taskListFragment">
+
+    <fragment
+        android:id="@+id/taskListFragment"
+        android:name="com.lucasfagundes.androidudemycourse.feature.task_list.TaskListFragment"
+        android:label="fragment_task_list"
+        tools:layout="@layout/fragment_task_list">
+        <action
+            android:id="@+id/action_taskListFragment_to_taskListAddFragment"
+            app:destination="@id/taskListAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskListAddFragment"
+        android:name="com.lucasfagundes.androidudemycourse.feature.task_list.TaskListAddFragment"
+        android:label=""
+        tools:layout="@layout/fragment_task_list_add" />
+</navigation>

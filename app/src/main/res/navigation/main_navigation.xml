@@ -11,11 +11,6 @@
         android:label="@string/home"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/nav_task_list"
-        android:name="com.lucasfagundes.androidudemycourse.feature.task_list.TaskListFragment"
-        android:label="Lista de tarefas"
-        tools:layout="@layout/fragment_task_list" />
-    <fragment
         android:id="@+id/nav_recycler_view"
         android:name="com.lucasfagundes.androidudemycourse.feature.recycler_view.RecyclerViewFragment"
         android:label="@string/recycler_view"
@@ -56,5 +51,9 @@
         android:label="@string/my_annotations"
         tools:layout="@layout/fragment_my_annotations" />
 
-
+    <fragment
+        android:id="@+id/nav_task_list"
+        android:name="com.lucasfagundes.androidudemycourse.feature.task_list.TaskListMainFragment"
+        android:label="@string/task_list"
+        tools:layout="@layout/fragment_task_list_main" />
 </navigation>
