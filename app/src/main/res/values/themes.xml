@@ -39,6 +39,11 @@
         <item name="colorAccent">@color/teal_700</item>
     </style>
 
+    <style name="Theme.TaskList" parent="Base.Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/pink_500</item>
+        <item name="colorAccent">@color/pink_500</item>
+    </style>
+
     <style name="ToolbarColoredBackArrow" parent="Theme.AndroidUdemyCourse">
         <item name="android:textColorSecondary">@color/white</item>
     </style>

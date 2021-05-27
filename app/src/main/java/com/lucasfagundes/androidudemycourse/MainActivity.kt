@@ -10,6 +10,8 @@ import androidx.navigation.ui.*
 import com.lucasfagundes.androidudemycourse.databinding.ActivityMainBinding
 import com.lucasfagundes.androidudemycourse.feature.atm_consultancy.AtmConsultancyActivity
 import com.lucasfagundes.androidudemycourse.feature.media_player.activities.MediaPlayerActivity
+import com.lucasfagundes.androidudemycourse.utils.setActionBarColor
+import com.lucasfagundes.androidudemycourse.utils.setStatusBarColor
 
 class MainActivity : AppCompatActivity() {
 
@@ -52,5 +54,11 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        setStatusBarColor(R.color.purple_700)
+        setActionBarColor(R.color.purple_500)
     }
 }

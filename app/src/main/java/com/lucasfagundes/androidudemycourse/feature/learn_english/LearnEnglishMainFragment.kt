@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.FragmentLearnEnglishMainBinding
 import com.lucasfagundes.androidudemycourse.feature.learn_english.adapter.LearnEnglishPagerAdapter
-import com.lucasfagundes.androidudemycourse.utils.changeStatusBarColor
+import com.lucasfagundes.androidudemycourse.utils.setStatusBarColor
 
 class LearnEnglishMainFragment : Fragment() {
 
@@ -30,7 +30,7 @@ class LearnEnglishMainFragment : Fragment() {
         binding.tabLayout.setupWithViewPager(binding.viewPager)
         binding.viewPager.clearOnPageChangeListeners()
 
-        changeStatusBarColor(R.color.brown)
+        setStatusBarColor(R.color.brown)
     }
 
     private fun setupToolbar() {
@@ -45,6 +45,6 @@ class LearnEnglishMainFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         (requireActivity() as AppCompatActivity).supportActionBar?.show()
-        changeStatusBarColor(R.color.purple_700)
+        setStatusBarColor(R.color.purple_700)
     }
 }

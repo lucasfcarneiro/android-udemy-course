@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.FragmentMyAnnotationsBinding
-import com.lucasfagundes.androidudemycourse.utils.changeStatusBarColor
+import com.lucasfagundes.androidudemycourse.utils.setStatusBarColor
 import com.lucasfagundes.androidudemycourse.utils.snackBar
 
 const val FILE_PREFERENCE = "filePreference"
@@ -32,7 +32,7 @@ class MyAnnotationsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        changeStatusBarColor(R.color.black)
+        setStatusBarColor(R.color.black)
         (requireActivity() as AppCompatActivity).supportActionBar?.hide()
 
         binding.floatButton.setOnClickListener {
@@ -80,6 +80,6 @@ class MyAnnotationsFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         (requireActivity() as AppCompatActivity).supportActionBar?.show()
-        changeStatusBarColor(R.color.purple_700)
+        setStatusBarColor(R.color.purple_700)
     }
 }

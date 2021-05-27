@@ -20,6 +20,7 @@
     <color name="gray">#454545</color>
     <color name="light_yellow">#F7EAC3</color>
     <color name="light_brown">#85554a</color>
+    <color name="red">#E60505</color>
     <color name="brown">#43302a</color>
     <color name="dark_brown">#332520</color>
 </resources>
