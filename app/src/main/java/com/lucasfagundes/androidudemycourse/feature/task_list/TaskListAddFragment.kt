@@ -1,14 +1,18 @@
 package com.lucasfagundes.androidudemycourse.feature.task_list
 
+import android.content.ContentValues
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.FragmentTaskListAddBinding
+import com.lucasfagundes.androidudemycourse.utils.DbHelper
 
 class TaskListAddFragment : Fragment() {
 
     private lateinit var binding: FragmentTaskListAddBinding
+    private lateinit var dbHelper: DbHelper
+    private lateinit var contentValues: ContentValues
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -16,6 +20,13 @@ class TaskListAddFragment : Fragment() {
     ): View {
         binding = FragmentTaskListAddBinding.inflate(inflater, container, false)
         setHasOptionsMenu(true)
+
+        contentValues = ContentValues()
+        contentValues.put("name","teste")
+        
+        dbHelper = DbHelper(context)
+        dbHelper.writableDatabase.insert(DbHelper.TASK_TABLE, null, contentValues)
+
         return binding.root
     }
 
@@ -28,6 +39,10 @@ class TaskListAddFragment : Fragment() {
         return when (item.itemId) {
             android.R.id.home -> {
                 activity?.onBackPressed()
+                true
+            }
+            R.id.save_task_list -> {
+                 //TODO save task
                 true
             }
             else -> super.onOptionsItemSelected(item)

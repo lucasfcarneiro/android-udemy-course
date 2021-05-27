@@ -1,6 +1,7 @@
 package com.lucasfagundes.androidudemycourse.feature.task_list
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -20,7 +21,25 @@ class TaskListFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentTaskListBinding.inflate(inflater, container, false)
+
+        handleRecyclerItemClickListener()
+
         return binding.root
+    }
+
+    private fun handleRecyclerItemClickListener() {
+        binding.taskListRecyclerView.addOnItemTouchListener(RecyclerItemClickListener(requireContext(),
+            binding.taskListRecyclerView,
+            object : RecyclerItemClickListener.OnItemClickListener {
+
+                override fun onItemClick(view: View, position: Int) {
+                    Log.i("clique", "onitemclick") //TODO
+                }
+
+                override fun onItemLongClick(view: View?, position: Int) {
+                    Log.i("clique", "onLONGitemclick") //TODO
+                }
+            }))
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -28,7 +47,10 @@ class TaskListFragment : Fragment() {
 
         setHasOptionsMenu(true)
         setupView()
-        loadTaskList(listOf("Um Sonho de Liberdade","O Poderoso Chefão","O Poderoso Chefão II","O Poderoso Chefão III"))
+        loadTaskList(listOf("Um Sonho de Liberdade",
+            "O Poderoso Chefão",
+            "O Poderoso Chefão II",
+            "O Poderoso Chefão III"))
 
         binding.taskListFloatButton.setOnClickListener {
             findNavController().navigate(TaskListFragmentDirections.actionTaskListFragmentToTaskListAddFragment())
