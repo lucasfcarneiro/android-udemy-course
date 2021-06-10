@@ -13,7 +13,7 @@ import com.lucasfagundes.androidudemycourse.databinding.FragmentMyAnnotationsBin
 import com.lucasfagundes.androidudemycourse.utils.setStatusBarColor
 import com.lucasfagundes.androidudemycourse.utils.snackBar
 
-const val FILE_PREFERENCE = "filePreference"
+//const val FILE_PREFERENCE = "filePreference"
 const val NOTE_KEY = "note"
 
 class MyAnnotationsFragment : Fragment() {
@@ -55,27 +55,27 @@ class MyAnnotationsFragment : Fragment() {
         }
     }
 
-    private fun getNoteFromSharedPreference() {
-        sharedPreferences = requireActivity().getSharedPreferences(FILE_PREFERENCE, 0)
-
-        if (sharedPreferences.contains(NOTE_KEY)) {
-            val recoveredNote = sharedPreferences.getString(NOTE_KEY, getString(R.string.note_not_found))
-
-            if (recoveredNote != null) {
-                binding.textInputNotes.setText(recoveredNote)
-            }
-        }
-    }
-
-    private fun saveInSharedPreference() {
-        val note = binding.textInputNotes.text.toString()
-
-        sharedPreferences = requireActivity().getSharedPreferences(FILE_PREFERENCE, 0)
-        sharedPreferences.edit().apply() {
-            putString(NOTE_KEY, note)
-            apply()
-        }
-    }
+//    private fun getNoteFromSharedPreference() {
+//        sharedPreferences = requireActivity().getSharedPreferences(FILE_PREFERENCE, 0)
+//
+//        if (sharedPreferences.contains(NOTE_KEY)) {
+//            val recoveredNote = sharedPreferences.getString(NOTE_KEY, getString(R.string.note_not_found))
+//
+//            if (recoveredNote != null) {
+//                binding.textInputNotes.setText(recoveredNote)
+//            }
+//        }
+//    }
+//
+//    private fun saveInSharedPreference() {
+//        val note = binding.textInputNotes.text.toString()
+//
+//        sharedPreferences = requireActivity().getSharedPreferences(FILE_PREFERENCE, 0)
+//        sharedPreferences.edit().apply() {
+//            putString(NOTE_KEY, note)
+//            apply()
+//        }
+//    }
 
     override fun onDestroy() {
         super.onDestroy()
