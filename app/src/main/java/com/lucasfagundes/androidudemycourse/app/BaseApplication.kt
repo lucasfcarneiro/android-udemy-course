@@ -2,6 +2,7 @@ package com.lucasfagundes.androidudemycourse.app
 
 import android.app.Application
 import com.lucasfagundes.androidudemycourse.di.dataModule
+import com.lucasfagundes.androidudemycourse.di.presentationModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -11,7 +12,10 @@ class BaseApplication : Application() {
         super.onCreate()
         startKoin {
             modules(
-                dataModule
+                listOf(
+                    dataModule,
+                    presentationModule
+                )
             ).androidContext(applicationContext)
         }
     }

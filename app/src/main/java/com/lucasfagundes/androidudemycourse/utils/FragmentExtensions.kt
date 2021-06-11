@@ -15,7 +15,7 @@ fun Fragment.setToolbarVisibility(isVisible: Boolean) {
     activity?.setToolbarVisibility(isVisible)
 }
 
-fun Fragment.setActionBarColor(color: Int){
+fun Fragment.setActionBarColor(color: Int) {
     activity?.setActionBarColor(color)
 }
 
