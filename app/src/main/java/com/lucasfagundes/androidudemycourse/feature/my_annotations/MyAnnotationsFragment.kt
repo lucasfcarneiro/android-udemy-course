@@ -12,6 +12,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.FragmentMyAnnotationsBinding
 import com.lucasfagundes.androidudemycourse.utils.setStatusBarColor
+import com.lucasfagundes.androidudemycourse.utils.setToolbarVisibility
 import com.lucasfagundes.androidudemycourse.utils.snackBar
 
 class MyAnnotationsFragment : Fragment() {
@@ -66,7 +67,7 @@ class MyAnnotationsFragment : Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
-        (requireActivity() as AppCompatActivity).supportActionBar?.show()
+        setToolbarVisibility(true)
         setStatusBarColor(R.color.purple_700)
     }
 }
