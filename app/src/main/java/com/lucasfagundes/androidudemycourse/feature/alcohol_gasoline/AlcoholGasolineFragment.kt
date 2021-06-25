@@ -1,15 +1,12 @@
 package com.lucasfagundes.androidudemycourse.feature.alcohol_gasoline
 
-import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
 import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.FragmentAlcoholGasolineBinding
-import com.lucasfagundes.androidudemycourse.utils.hideKeyboard
 
 class AlcoholGasolineFragment : Fragment() {
 
@@ -19,7 +16,7 @@ class AlcoholGasolineFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentAlcoholGasolineBinding.inflate(inflater, container, false)
         return binding.root
     }

@@ -1,4 +1,4 @@
-package com.lucasfagundes.androidudemycourse.di
+package com.lucasfagundes.androidudemycourse.feature.my_annotations.di
 
 import com.lucasfagundes.androidudemycourse.feature.my_annotations.MyAnnotationViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel

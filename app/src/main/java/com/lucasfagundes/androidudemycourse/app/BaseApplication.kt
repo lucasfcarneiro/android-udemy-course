@@ -1,8 +1,8 @@
 package com.lucasfagundes.androidudemycourse.app
 
 import android.app.Application
-import com.lucasfagundes.androidudemycourse.di.dataModule
-import com.lucasfagundes.androidudemycourse.di.presentationModule
+import com.lucasfagundes.androidudemycourse.feature.my_annotations.di.dataModule
+import com.lucasfagundes.androidudemycourse.feature.my_annotations.di.presentationModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 

@@ -2,7 +2,7 @@ package com.lucasfagundes.androidudemycourse.feature.my_annotations
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.lucasfagundes.androidudemycourse.data.SharedPreferenceHelper
+import com.lucasfagundes.androidudemycourse.feature.my_annotations.data.SharedPreferenceHelper
 
 const val NOTE_KEY = "note"
 
