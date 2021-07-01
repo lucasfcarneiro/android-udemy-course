@@ -1,4 +1,4 @@
-package com.lucasfagundes.androidudemycourse.feature.my_annotations.data
+package com.lucasfagundes.androidudemycourse.common.data
 
 import android.content.Context
 

@@ -1,6 +1,6 @@
-package com.lucasfagundes.androidudemycourse.feature.my_annotations.di
+package com.lucasfagundes.androidudemycourse.common.di
 
-import com.lucasfagundes.androidudemycourse.feature.my_annotations.data.SharedPreferenceHelper
+import com.lucasfagundes.androidudemycourse.common.data.SharedPreferenceHelper
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 

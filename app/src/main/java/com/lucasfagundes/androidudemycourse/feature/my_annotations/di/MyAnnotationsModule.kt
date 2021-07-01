@@ -4,7 +4,7 @@ import com.lucasfagundes.androidudemycourse.feature.my_annotations.MyAnnotationV
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
-val presentationModule = module {
+val myAnnotationsModule = module {
     viewModel {
         MyAnnotationViewModel(
             sharedPreferenceHelper = get()
