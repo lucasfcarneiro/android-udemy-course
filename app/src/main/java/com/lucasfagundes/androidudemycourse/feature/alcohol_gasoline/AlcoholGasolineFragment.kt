@@ -26,7 +26,7 @@ class AlcoholGasolineFragment : Fragment() {
         binding.calcButton.setOnClickListener {
             getPrices()
         }
-        binding.cleaTextView.setOnClickListener { cleanFields() }
+        binding.clearTextView.setOnClickListener { cleanFields() }
     }
 
     private fun getPrices() {
@@ -42,7 +42,7 @@ class AlcoholGasolineFragment : Fragment() {
             } else {
                 binding.resultTextView.text = getString(R.string.better_gasoline)
             }
-            binding.percentTextView.text = getString(R.string.relation_price_info, division.toString())
+            binding.comparisonTextView.text = getString(R.string.fuel_price_comparison, division.toString())
         } else {
             binding.resultTextView.text = getString(R.string.empty_field)
         }
@@ -63,6 +63,6 @@ class AlcoholGasolineFragment : Fragment() {
         binding.alcoholInputText.setText("")
         binding.gasolineInputText.setText("")
         binding.resultTextView.text = ""
-        binding.percentTextView.text = ""
+        binding.comparisonTextView.text = ""
     }
 }
