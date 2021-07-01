@@ -1,4 +1,4 @@
-package com.lucasfagundes.androidudemycourse.data
+package com.lucasfagundes.androidudemycourse.common.data
 
 import android.content.Context
 
