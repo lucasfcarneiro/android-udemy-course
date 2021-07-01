@@ -17,7 +17,7 @@ class RandomNumberFragment : Fragment() {
         layoutInflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentRandomNumberBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
