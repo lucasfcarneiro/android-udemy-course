@@ -1,21 +1,24 @@
 package com.lucasfagundes.androidudemycourse.feature.alcohol_gasoline
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.fragment.app.Fragment
 import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.FragmentAlcoholGasolineBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AlcoholGasolineFragment : Fragment() {
 
     private lateinit var binding: FragmentAlcoholGasolineBinding
+    private val viewModel: AlcoholGasolineViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         binding = FragmentAlcoholGasolineBinding.inflate(inflater, container, false)
         return binding.root
@@ -23,46 +26,42 @@ class AlcoholGasolineFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.calcButton.setOnClickListener {
-            getPrices()
-        }
-        binding.clearTextView.setOnClickListener { cleanFields() }
+        handleButtonClick()
+        handleObserver()
     }
 
-    private fun getPrices() {
-        val alcoholPrice = binding.alcoholInputText.text.toString()
-        val gasolinePrice = binding.gasolineInputText.text.toString()
-
-        val fieldValidated = validateFields(alcoholPrice, gasolinePrice)
-
-        if (fieldValidated) {
-            val division = alcoholPrice.toDouble() / gasolinePrice.toDouble()
-            if (division <= 0.7) {
-                binding.resultTextView.text = getString(R.string.better_alcohol)
-            } else {
-                binding.resultTextView.text = getString(R.string.better_gasoline)
+    private fun handleButtonClick() {
+        with(binding) {
+            calcButton.setOnClickListener {
+                viewModel.compareFuelPrices(
+                    alcoholInputText.text.toString(),
+                    gasolineInputText.text.toString()
+                )
             }
-            binding.comparisonTextView.text = getString(R.string.fuel_price_comparison, division.toString())
-        } else {
-            binding.resultTextView.text = getString(R.string.empty_field)
+            clearButton.setOnClickListener {
+                clearFields()
+            }
         }
     }
 
-    private fun validateFields(alcoholInputText: String, gasolineInputText: String): Boolean {
-        var isValid = true
-
-        if (alcoholInputText.isBlank()) {
-            isValid = false
-        } else if (gasolineInputText.isBlank()) {
-            isValid = false
+    private fun handleObserver() {
+        val result = Observer<String> { result ->
+            binding.resultTextView.text = result
         }
-        return isValid
+        viewModel.result.observe(viewLifecycleOwner, result)
+
+        val comparison = Observer<String> { comparison ->
+            binding.comparisonTextView.text = comparison
+        }
+        viewModel.comparison.observe(viewLifecycleOwner, comparison)
     }
 
-    private fun cleanFields() {
-        binding.alcoholInputText.setText("")
-        binding.gasolineInputText.setText("")
-        binding.resultTextView.text = ""
-        binding.comparisonTextView.text = ""
+    private fun clearFields() {
+        with(binding) {
+            alcoholInputText.setText(getString(R.string.empty))
+            gasolineInputText.setText(getString(R.string.empty))
+            resultTextView.text = getString(R.string.empty)
+            comparisonTextView.text = getString(R.string.empty)
+        }
     }
 }
