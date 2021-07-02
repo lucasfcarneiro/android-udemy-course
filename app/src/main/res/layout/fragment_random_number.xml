@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@id/clickBelowTextView" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/noNumberChosen"
+        android:id="@+id/resultNumberTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
