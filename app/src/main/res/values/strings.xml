@@ -13,6 +13,9 @@
     <string name="action_settings">Settings</string>
     <string name="action_about">About</string>
 
+    <!--    Common-->
+    <string name="empty" />
+
     <!--    Home-->
     <string name="home">Home</string>
 
@@ -41,7 +44,7 @@
     <string name="better_gasoline">Melhor gasolina</string>
     <string name="clean">Limpar</string>
     <string name="calculate">Calcular</string>
-    <string name="relation_price_info">%1$s é o preço do alcool em relação a gasolina</string>
+    <string name="fuel_price_comparison">%1$s é o preço do alcool em relação a gasolina</string>
     <string name="empty_field">Campo vazio</string>
 
     <!--    Tip Calculator-->
