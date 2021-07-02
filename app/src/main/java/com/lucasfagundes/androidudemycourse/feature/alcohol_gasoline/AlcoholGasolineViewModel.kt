@@ -23,13 +23,15 @@ class AlcoholGasolineViewModel(application: Application) : AndroidViewModel(appl
 
         if (isFieldValidated) {
             val fuelDivision = alcoholPrice.toDouble() / gasolinePrice.toDouble()
+            val rounded = String.format("%.2f", fuelDivision)
+
             if (fuelDivision <= FUEL_PERCENTAGE_RULE) {
                 result.value = getString(R.string.better_alcohol)
             } else {
                 result.value = getString(R.string.better_gasoline)
             }
-            comparison.value = getString(R.string.fuel_price_comparison, fuelDivision.toString())
-        }else{
+            comparison.value = getString(R.string.fuel_price_comparison, rounded)
+        } else {
             result.value = getString(R.string.empty_field)
         }
     }
