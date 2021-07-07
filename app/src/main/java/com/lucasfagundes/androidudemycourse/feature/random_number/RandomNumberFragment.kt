@@ -37,10 +37,9 @@ class RandomNumberFragment : Fragment() {
     }
 
     private fun handleObserver() {
-        val randomNumber = Observer<Int> { randomNumber ->
-            binding.resultNumberTextView.text =
-                getString(R.string.number_answer, randomNumber.toString())
+        val result = Observer<String> { result ->
+            binding.resultNumberTextView.text = result.toString()
         }
-        viewModel.randomNumber.observe(viewLifecycleOwner, randomNumber)
+        viewModel.result.observe(viewLifecycleOwner, result)
     }
 }

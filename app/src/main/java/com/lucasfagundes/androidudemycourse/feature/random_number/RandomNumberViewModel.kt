@@ -9,15 +9,12 @@ import kotlin.random.Random
 
 class RandomNumberViewModel(application: Application) : AndroidViewModel(application) {
 
-    val randomNumber: MutableLiveData<Int> by lazy {
-        MutableLiveData<Int>()
-    }
     val result: MutableLiveData<String> by lazy {
         MutableLiveData<String>()
     }
 
     fun setRandomNumber() {
-        randomNumber.value = Random.nextInt(0, 20)
+        val randomNumber = Random.nextInt(0, 20)
         result.value = getString(R.string.number_answer, randomNumber.toString())
     }
 }

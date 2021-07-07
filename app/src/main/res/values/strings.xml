@@ -23,8 +23,8 @@
     <string name="random_number">Numero Aleatorio</string>
     <string name="button_play">Jogar</string>
     <string name="click_below">Clique abaixo</string>
-    <string name="choose_number">Escolha um numero de 0 a 20</string>
-    <string name="number_answer">Numero escolhido: %1$s</string>
+    <string name="choose_number">Pense em um numero de 0 a 20</string>
+    <string name="number_answer">Numero: %1$s</string>
     <string name="no_number_chosen">Nenhum numero escolhido </string>
 
     <!--    Rock Paper Scissors-->
