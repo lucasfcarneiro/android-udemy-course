@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.FragmentRandomNumberBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -37,9 +35,7 @@ class RandomNumberFragment : Fragment() {
     }
 
     private fun handleObserver() {
-        val result = Observer<String> { result ->
-            binding.resultNumberTextView.text = result.toString()
-        }
-        viewModel.result.observe(viewLifecycleOwner, result)
+        viewModel.result.observe(viewLifecycleOwner,
+            { result -> binding.resultNumberTextView.text = result })
     }
 }
