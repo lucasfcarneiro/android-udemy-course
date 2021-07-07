@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/light_blue"
     android:layout_height="match_parent"
     tools:context=".feature.random_number.RandomNumberFragment">
 
@@ -11,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
+        android:textStyle="bold"
         android:gravity="center"
         android:text="@string/choose_number"
         android:textSize="20sp"
@@ -34,17 +36,17 @@
         android:id="@+id/playButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="16dp"
         android:text="@string/button_play"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/clickBelowTextView" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/noNumberChosen"
+        android:id="@+id/resultNumberTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:textStyle="italic"
         android:text="@string/no_number_chosen"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
