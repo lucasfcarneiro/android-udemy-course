@@ -5,6 +5,7 @@ import com.lucasfagundes.androidudemycourse.feature.alcohol_gasoline.di.alcoholG
 import com.lucasfagundes.androidudemycourse.common.di.dataModule
 import com.lucasfagundes.androidudemycourse.feature.my_annotations.di.myAnnotationsModule
 import com.lucasfagundes.androidudemycourse.feature.random_number.di.randomNumberModule
+import com.lucasfagundes.androidudemycourse.feature.tip_calculator.di.tipCalculatorModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -18,7 +19,8 @@ class BaseApplication : Application() {
                     dataModule,
                     myAnnotationsModule,
                     alcoholGasolineModule,
-                    randomNumberModule
+                    randomNumberModule,
+                    tipCalculatorModule
                 )
             ).androidContext(applicationContext)
         }
