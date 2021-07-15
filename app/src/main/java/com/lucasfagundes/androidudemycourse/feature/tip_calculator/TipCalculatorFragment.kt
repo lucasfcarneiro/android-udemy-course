@@ -7,19 +7,23 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import com.lucasfagundes.androidudemycourse.R
 import com.lucasfagundes.androidudemycourse.databinding.FragmentTipCalculatorBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
+
 
 class TipCalculatorFragment : Fragment() {
 
     private lateinit var billValue: String
     private var percentage = 0.0
     private lateinit var binding: FragmentTipCalculatorBinding
+    private val viewModel: TipCalculatorViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         binding = FragmentTipCalculatorBinding.inflate(inflater, container, false)
         return binding.root
@@ -29,6 +33,7 @@ class TipCalculatorFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupView()
         seekBarHandler()
+        handleObserver()
     }
 
     private fun setupView() {
@@ -48,7 +53,7 @@ class TipCalculatorFragment : Fragment() {
                 billValue = binding.textEditBillValue.text.toString()
                 percentage = progress.toDouble()
                 if (billValue.isNotBlank()) {
-                    calculateTip(percentage)
+                    viewModel.calculateTip()
                 }
             }
 
@@ -63,6 +68,14 @@ class TipCalculatorFragment : Fragment() {
             }
         })
     }
+
+    private fun handleObserver() {
+        val percentage = Observer<Double>{}
+        viewModel.percentage.observe(viewLifecycleOwner, { percentage })
+        val billValue = Observer<Double>{}
+        viewModel.billvalue.observe(viewLifecycleOwner, { billValue })
+    }
+
 
     private fun calculateTip(percentage: Double) {
 
